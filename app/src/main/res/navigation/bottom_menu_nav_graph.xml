@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_menu_nav_graph"
+    app:startDestination="@id/navHome">
+
+    <action
+        android:id="@+id/action_from_this_to_withdrawFragment"
+        app:destination="@id/withdrawFragment"
+        app:enterAnim="@anim/activity_fade_in"
+        app:exitAnim="@anim/activity_fade_out"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/activity_fade_in"
+        app:popExitAnim="@anim/activity_fade_out"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <action
+        android:id="@+id/action_from_this_to_settingsFragment"
+        app:destination="@id/settingsFragment"
+        app:enterAnim="@anim/activity_fade_in"
+        app:exitAnim="@anim/activity_fade_out"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/activity_fade_in"
+        app:popExitAnim="@anim/activity_fade_out"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <fragment
+        android:id="@+id/navReferral"
+        android:name="com.app.development.winter.ui.referral.ReferralFragment"
+        android:label="@string/referral"
+        tools:layout="@layout/fragment_referral">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navWithdraw"
+        android:name="com.app.development.winter.ui.profile.ProfileFragment"
+        android:label="@string/withdraw"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navHome"
+        android:name="com.app.development.winter.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navOffers"
+        android:name="com.app.development.winter.ui.offers.OffersFragment"
+        android:label=""
+        tools:layout="@layout/fragment_offers">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.development.winter.ui.settings.SettingFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_navSettings_to_editProfileActivity"
+            app:destination="@id/editProfileActivity"
+            app:enterAnim="@anim/activity_fade_in"
+            app:exitAnim="@anim/activity_fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/activity_fade_in"
+            app:popExitAnim="@anim/activity_fade_out"
+            app:popUpToInclusive="false"
+            app:popUpToSaveState="true"
+            app:restoreState="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/withdrawFragment"
+        android:name="com.app.development.winter.ui.withdraw.WithdrawFragment"
+        android:label="@string/withdraw"
+        tools:layout="@layout/fragment_withdraw_page">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navLeaderboard"
+        android:name="com.app.development.winter.ui.leaderboard.LeaderboardFragment"
+        android:label="@string/leaderboard"
+        tools:layout="@layout/fragment_leader_board">
+        <argument
+            android:name="showBottomBar"
+            android:defaultValue="true" />
+    </fragment>
+
+
+    <activity
+        android:id="@+id/editProfileActivity"
+        android:name="com.app.development.winter.ui.settings.EditProfileActivity"
+        android:label="@string/edit_profile"
+        tools:layout="@layout/activity_welcome" />
+</navigation>

@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="rankOne"
+            type="com.app.development.winter.ui.leaderboard.model.LeaderBoardUser" />
+
+        <variable
+            name="rankTwo"
+            type="com.app.development.winter.ui.leaderboard.model.LeaderBoardUser" />
+
+        <variable
+            name="rankThree"
+            type="com.app.development.winter.ui.leaderboard.model.LeaderBoardUser" />
+
+        <variable
+            name="adapter"
+            type="com.app.development.winter.ui.leaderboard.adapter.LeaderboardUserAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"
+            app:appTitle="@{`\n`+@string/leaderboard}"
+            app:showBack="@{true}"
+            app:subTitle="@{@string/leaderboard_message}" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsingToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:isGone="@{rankOne==null &amp;&amp;rankTwo==null&amp;&amp;rankThree==null}"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_collapseMode="none">
+                        <!--  First user details-->
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutSecondUser"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:isInvisible="@{rankTwo==null}"
+                            app:layout_constraintBottom_toBottomOf="@+id/layoutFirstUser"
+                            app:layout_constraintEnd_toStartOf="@+id/layoutFirstUser"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/layoutFirstUser"
+                            app:layout_constraintVertical_bias="0.8">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtSecondUserRank"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:setValue="@{rankTwo.rank+``}"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="2" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivSecondUserCrown"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtSecondUserRank"
+                                app:srcCompat="@drawable/ic_crown" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_4ssp"
+                                android:layout_marginTop="@dimen/_8ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivSecondUser"
+                                app:layout_constraintEnd_toEndOf="@+id/ivSecondUser"
+                                app:layout_constraintStart_toStartOf="@+id/ivSecondUser"
+                                app:layout_constraintTop_toTopOf="@+id/ivSecondUser"
+                                app:srcCompat="@drawable/ic_circle_gradient" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/ivSecondUser"
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:layout_marginVertical="@dimen/_4sdp"
+                                android:adjustViewBounds="true"
+                                android:imageResource="@{rankTwo.userImage}"
+                                android:paddingBottom="@dimen/_2sdp"
+                                app:layout_constraintDimensionRatio="w, 1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivSecondUserCrown"
+                                app:shapeAppearance="@style/CircleImageView"
+                                tools:srcCompat="@drawable/avatar_5" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblSecondLevel"
+                                style="@style/FontPrimaryMedium.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:text="@string/time"
+                                android:textSize="@dimen/_6ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivSecondUser" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtSecondUserName"
+                                style="@style/FontSecondaryBold.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankTwo.name}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_8ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblSecondLevel"
+                                tools:text="Second User" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtSecondUserAmount"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankTwo.formatedTimeSpent}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_7ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtSecondUserName"
+                                tools:text="00:00:00" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutFirstUser"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="wrap_content"
+                            android:isInvisible="@{rankOne==null}"
+                            app:layout_constraintEnd_toStartOf="@+id/layoutThirdUser"
+                            app:layout_constraintStart_toEndOf="@+id/layoutSecondUser"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtFirstUserRank"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:setValue="@{rankOne.rank+``}"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="1" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivFirstUserCrown"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtFirstUserRank"
+                                app:srcCompat="@drawable/ic_crown" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_7ssp"
+                                android:layout_marginTop="@dimen/_14ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivFirstUser"
+                                app:layout_constraintEnd_toEndOf="@+id/ivFirstUser"
+                                app:layout_constraintStart_toStartOf="@+id/ivFirstUser"
+                                app:layout_constraintTop_toTopOf="@+id/ivFirstUser"
+                                app:srcCompat="@drawable/ic_circle_gradient" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/ivFirstUser"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:adjustViewBounds="true"
+                                android:imageResource="@{rankOne.userImage}"
+                                android:paddingBottom="@dimen/_2sdp"
+                                app:layout_constraintDimensionRatio="w, 1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivFirstUserCrown"
+                                app:shapeAppearance="@style/CircleImageView"
+                                tools:srcCompat="@drawable/avatar_12" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblFirstLevel"
+                                style="@style/FontPrimaryMedium.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:text="@string/time"
+                                android:textSize="@dimen/_6ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivFirstUser" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtFirstUserName"
+                                style="@style/FontSecondaryBold.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankOne.name}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_8ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblFirstLevel"
+                                tools:text="First User" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtFirstUserAmount"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankOne.formatedTimeSpent}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_7ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtFirstUserName"
+                                tools:text="00:00:00" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutThirdUser"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:isInvisible="@{rankThree==null}"
+                            app:layout_constraintBottom_toBottomOf="@+id/layoutFirstUser"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/layoutFirstUser"
+                            app:layout_constraintTop_toTopOf="@+id/layoutFirstUser"
+                            app:layout_constraintVertical_bias="0.8">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtThirdUserRank"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:setValue="@{rankThree.rank+``}"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="3" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivThirdUserCrown"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtThirdUserRank"
+                                app:srcCompat="@drawable/ic_crown" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_4ssp"
+                                android:layout_marginTop="@dimen/_8ssp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivThirdUser"
+                                app:layout_constraintEnd_toEndOf="@+id/ivThirdUser"
+                                app:layout_constraintStart_toStartOf="@+id/ivThirdUser"
+                                app:layout_constraintTop_toTopOf="@+id/ivThirdUser"
+                                app:srcCompat="@drawable/ic_circle_gradient" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/ivThirdUser"
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:layout_marginVertical="@dimen/_4sdp"
+                                android:adjustViewBounds="true"
+                                android:imageResource="@{rankThree.userImage}"
+                                android:paddingBottom="@dimen/_2sdp"
+                                app:layout_constraintDimensionRatio="w, 1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivThirdUserCrown"
+                                app:shapeAppearance="@style/CircleImageView"
+                                tools:srcCompat="@drawable/avatar_10" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lblThirdLevel"
+                                style="@style/FontPrimaryMedium.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:text="@string/time"
+                                android:textSize="@dimen/_6ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/ivThirdUser" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtThirdUserName"
+                                style="@style/FontSecondaryBold.TextColor.Secondary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankThree.name}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_8ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lblThirdLevel"
+                                tools:text="Third User" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtThirdUserAmount"
+                                style="@style/FontSecondaryBold.TextColor.Primary"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:isSelected="@{true}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:setValue="@{rankThree.formatedTimeSpent}"
+                                android:singleLine="true"
+                                android:textSize="@dimen/_7ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtThirdUserName"
+                                tools:text="00:00:00" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{adapter}"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:itemCount="12"
+                tools:listitem="@layout/row_leader_board_user"
+                tools:visibility="visible" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <include
+            layout="@layout/layout_error_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
+
+        <include
+            android:id="@+id/loadingLayout"
+            layout="@layout/loading_layout_leader_board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

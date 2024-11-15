@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="sessionData"
+            type="com.app.development.winter.ui.session.model.SessionData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/window_background"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <include
+                android:id="@+id/layoutToolbar"
+                layout="@layout/layout_toolbar" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutToolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_main_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@id/buttonPositive"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!--Guideline of the layout-->
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineTop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintGuide_begin="0dp"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineStart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintGuide_begin="@dimen/_20sdp"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineEnd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintGuide_end="@dimen/_20sdp"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineBottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintGuide_end="@dimen/_20sdp"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_marginVertical="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txtSubTitle"
+                            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                            app:layout_constraintTop_toBottomOf="@+id/guidelineTop"
+                            app:srcCompat="@drawable/icon_delete_account" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtSubTitle"
+                            style="@style/FontSecondaryBold.TextColor.Secondary"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:text="@string/are_you_sure"
+                            android:textSize="@dimen/_20ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/txtEarning"
+                            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                            app:layout_constraintTop_toBottomOf="@+id/imageViewIcon" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtEarning"
+                            style="@style/FontSecondaryBold.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:background="@drawable/lib_earning_background"
+                            android:gravity="center"
+                            android:shadowColor="@android:color/transparent"
+                            android:textSize="@dimen/_20ssp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toTopOf="@+id/txtMessage"
+                            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSubTitle"
+                            app:layout_goneMarginTop="@dimen/_10sdp"
+                            tools:text="000000"
+                            tools:visibility="visible" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtMessage"
+                            style="@style/FontPrimaryRegular.TextColor.Secondary"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:gravity="center_horizontal"
+                            android:minLines="3"
+                            android:text="@string/delete_account_message"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+                            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                            app:layout_constraintTop_toBottomOf="@+id/txtEarning" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonPositive"
+                        style="@style/Widget.Button.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:text="@string/ok"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toTopOf="@+id/buttonNegative"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_goneMarginBottom="@dimen/_20sdp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonNegative"
+                        style="@style/Widget.Button.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{(v)->clickListener.onClick(v)}"
+                        android:text="@string/cancel"
+                        android:visibility="gone"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressView"
+                        style="@style/ProgressBarHorizontal"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.app.development.winter.ui.leaderboard.model.LeaderBoardUser" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_3sdp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_minus6sdp"
+            android:alpha="0.5"
+            android:background="@drawable/ic_separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRank"
+            style="@style/FontSecondaryBold.TextColor.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:minWidth="@dimen/_20sdp"
+            android:setValue="@{user.rank+``}"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivUser"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_4ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivUser"
+            app:layout_constraintStart_toStartOf="@+id/ivUser"
+            app:layout_constraintTop_toTopOf="@+id/ivUser"
+            app:srcCompat="@drawable/ic_circle_gradient" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUser"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:adjustViewBounds="true"
+            android:imageResource="@{user.userImage}"
+            android:paddingBottom="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtUserName"
+            app:layout_constraintStart_toEndOf="@+id/txtRank"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CircleImageView"
+            tools:srcCompat="@drawable/avatar_8" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtUserName"
+            style="@style/FontSecondaryBold.TextColor.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:setValue="@{user.name}"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dot1"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toEndOf="@+id/ivUser"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Username" />
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:background="@drawable/rounded_corner_white"
+            android:backgroundTint="@color/colorTertiary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtTime"
+            app:layout_constraintStart_toEndOf="@+id/txtUserName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTime"
+            style="@style/FontPrimaryMedium.TextColor.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:gravity="center"
+            android:minWidth="@dimen/_40sdp"
+            android:text="@string/time"
+            android:textSize="@dimen/_7ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dot2"
+            app:layout_constraintStart_toEndOf="@+id/dot1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:background="@drawable/rounded_corner_white"
+            android:backgroundTint="@color/colorTertiary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+            app:layout_constraintStart_toEndOf="@+id/txtTime"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtAmount"
+            style="@style/FontSecondaryBold.Number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:setValue="@{user.formatedTimeSpent}"
+            android:textColor="@color/colorTextPrimaryInverse"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/dot2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00:00:00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

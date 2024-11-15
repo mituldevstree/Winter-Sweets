@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="setting"
+            type="com.app.development.winter.ui.settings.model.Setting" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_7sdp"
+        android:paddingVertical="@dimen/_7sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:imageResource="@{setting.icon}"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_settings_reward"
+            android:tint="@color/colorTertiary"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSubTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/FontPrimaryBold.TextColor.Primary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:gravity="center_vertical"
+            android:setValue="@{setting.title}"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@+id/txtSubTitle"
+            app:layout_constraintEnd_toStartOf="@+id/imgArrow"
+            app:layout_constraintStart_toEndOf="@+id/imgIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@string/show_user_statistics" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSubTitle"
+            style="@style/FontPrimaryRegular.TextColor.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:setValue="@{setting.desc}"
+            android:textSize="@dimen/_7ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+            app:layout_constraintStart_toStartOf="@+id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            tools:text="Setting" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/ic_setting_next"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_minus7sdp"
+            android:alpha="0.5"
+            android:background="@color/colorStroke"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_gravity="center"
+            android:clipToPadding="false">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/ic_circle_gradient"
+                app:layout_constraintBottom_toBottomOf="@+id/ivUser"
+                app:layout_constraintEnd_toEndOf="@+id/ivUser"
+                app:layout_constraintStart_toStartOf="@+id/ivUser"
+                app:layout_constraintTop_toTopOf="@+id/ivUser" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivUser"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:paddingBottom="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/avatar_20" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="visible"
+                app:indicatorColor="@color/colorTertiary"
+                app:indicatorSize="@dimen/_30sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ivUser"
+                app:layout_constraintEnd_toEndOf="@+id/ivUser"
+                app:layout_constraintStart_toStartOf="@+id/ivUser"
+                app:layout_constraintTop_toTopOf="@+id/ivUser"
+                app:trackColor="@color/colorEditTextBg"
+                app:trackCornerRadius="@dimen/_10sdp"
+                app:trackThickness="@dimen/_4sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

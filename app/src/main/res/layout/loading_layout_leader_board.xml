@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+        <xyz.peridy.shimmerlayout.ShimmerLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/guideLineTop"
+            app:shimmer_color="@color/colorShimmerAlt"
+            app:shimmer_duration="1500"
+            app:shimmer_angle="1"
+            app:shimmer_width="@dimen/_200sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:alpha="0.5"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutSecondUser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutFirstUser"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutFirstUser"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/layoutFirstUser"
+                    app:layout_constraintVertical_bias="0.8">
+
+                    <View
+                        android:id="@+id/txtSecondUserRank"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSecondUserCrown"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:tint="@color/colorDefaultViewColorVariant"
+                        android:tintMode="src_in"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSecondUserRank"
+                        app:srcCompat="@drawable/ic_crown" />
+
+                    <View
+                        android:id="@+id/ivSecondUserBg"
+                        android:layout_width="@dimen/_64sdp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="@drawable/ic_circle_gradient"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        android:backgroundTintMode="src_in"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivSecondUserCrown" />
+
+                    <View
+                        android:id="@+id/lblSecondLevel"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivSecondUserBg" />
+
+                    <View
+                        android:id="@+id/txtSecondUserName"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblSecondLevel" />
+
+                    <View
+                        android:id="@+id/txtSecondUserAmount"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSecondUserName" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutFirstUser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutThirdUser"
+                    app:layout_constraintStart_toEndOf="@+id/layoutSecondUser"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/txtFirstUserRank"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivFirstUserCrown"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:tint="@color/colorDefaultViewColorVariant"
+                        android:tintMode="src_in"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFirstUserRank"
+                        app:srcCompat="@drawable/ic_crown" />
+
+                    <View
+                        android:id="@+id/ivFirstUserBg"
+                        android:layout_width="@dimen/_92sdp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_28sdp"
+                        android:background="@drawable/ic_circle_gradient"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFirstUserCrown" />
+
+                    <View
+                        android:id="@+id/lblFirstLevel"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFirstUserBg" />
+
+                    <View
+                        android:id="@+id/txtFirstUserName"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblFirstLevel" />
+
+                    <View
+                        android:id="@+id/txtFirstUserAmount"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFirstUserName" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutThirdUser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutFirstUser"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutFirstUser"
+                    app:layout_constraintTop_toTopOf="@+id/layoutFirstUser"
+                    app:layout_constraintVertical_bias="0.8">
+
+                    <View
+                        android:id="@+id/txtThirdUserRank"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivThirdUserCrown"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:tint="@color/colorDefaultViewColorVariant"
+                        android:tintMode="src_in"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtThirdUserRank"
+                        app:srcCompat="@drawable/ic_crown" />
+
+                    <View
+                        android:id="@+id/ivThirdUserBg"
+                        android:layout_width="@dimen/_64sdp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="@drawable/ic_circle_gradient"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivThirdUserCrown" />
+
+                    <View
+                        android:id="@+id/lblThirdLevel"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivThirdUserBg" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtThirdUserName"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lblThirdLevel" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtThirdUserAmount"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/rounded_corner_white"
+                        android:backgroundTint="@color/colorDefaultViewColorVariant"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtThirdUserName" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </xyz.peridy.shimmerlayout.ShimmerLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+            <include layout="@layout/loading_layout_leader_board_user" />
+
+            <include layout="@layout/loading_layout_leader_board_user" />
+
+            <include layout="@layout/loading_layout_leader_board_user" />
+
+            <include layout="@layout/loading_layout_leader_board_user" />
+
+            <include layout="@layout/loading_layout_leader_board_user" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

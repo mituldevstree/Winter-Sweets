@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <xyz.peridy.shimmerlayout.ShimmerLayout
+        android:id="@+id/layoutParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:shimmer_color="@color/colorShimmerAlt"
+        app:shimmer_duration="1500"
+        app:shimmer_angle="1"
+        app:shimmer_width="@dimen/_200sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_3sdp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:alpha="0.5"
+                android:background="@drawable/ic_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/txtRank"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                android:gravity="center"
+                android:maxLines="1"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivUserBg"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/ivUserBg"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_circle_gradient"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintDimensionRatio="h,1:1.025"
+                app:layout_constraintEnd_toStartOf="@+id/txtUserName"
+                app:layout_constraintStart_toEndOf="@+id/txtRank"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/txtUserName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dot1"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@+id/ivUserBg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dot1"
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/lblMarketValue"
+                app:layout_constraintStart_toEndOf="@+id/txtUserName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/lblMarketValue"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dot2"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/dot1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dot2"
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+                app:layout_constraintStart_toEndOf="@+id/lblMarketValue"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/txtAmount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_10sdp"
+                android:alpha="0.8"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/dot2"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </xyz.peridy.shimmerlayout.ShimmerLayout>
+</layout>

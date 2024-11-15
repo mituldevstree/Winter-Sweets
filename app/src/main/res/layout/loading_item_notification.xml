@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <xyz.peridy.shimmerlayout.ShimmerLayout
+        android:id="@+id/layoutLoadingDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:shimmer_angle="1"
+        app:shimmer_color="@color/colorShimmerAlt"
+        app:shimmer_duration="1500"
+        app:shimmer_width="@dimen/_250sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingVertical="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seperator">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0.45"
+                android:background="@drawable/notification_image_bg"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="@+id/ivNotification"
+                app:layout_constraintEnd_toEndOf="@+id/ivNotification"
+                app:layout_constraintStart_toStartOf="@+id/ivNotification"
+                app:layout_constraintTop_toTopOf="@+id/ivNotification" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_minus10sdp"
+                android:alpha="0.45"
+                android:background="@drawable/notification_content_bg"
+                android:backgroundTint="@color/colorDefaultViewColorVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                app:layout_constraintTop_toTopOf="@+id/ivNotification" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/_15sdp"
+                android:src="@drawable/rounded_corner_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorDefaultViewColorAlt" />
+
+            <View
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorAlt"
+                app:layout_constraintBottom_toTopOf="@+id/txtDesc1"
+                app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+                app:layout_constraintStart_toEndOf="@+id/ivNotification"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_goneMarginEnd="@dimen/_20sdp" />
+
+            <View
+                android:id="@+id/txtDesc1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorAlt"
+                app:layout_constraintBottom_toTopOf="@+id/txtDesc2"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+            <View
+                android:id="@+id/txtDesc2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorAlt"
+                app:layout_constraintBottom_toTopOf="@+id/txtDesc3"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtDesc1" />
+
+            <View
+                android:id="@+id/txtDesc3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_60sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorAlt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtDesc2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAmount"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/rounded_corner_white"
+                android:backgroundTint="@color/colorDefaultViewColorAlt"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDesc3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtTitle"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </xyz.peridy.shimmerlayout.ShimmerLayout>
+</layout>

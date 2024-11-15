@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="statistics"
+            type="com.app.development.winter.shared.model.UserStatistics" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <import type="com.app.development.winter.utility.ViewUtil" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_margin="@dimen/_30sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/rounded_content_bg"
+            android:clipToPadding="false"
+            android:keepScreenOn="true"
+            android:theme="@style/Theme.Material3.DynamicColors.DayNight">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="0dp"
+                app:srcCompat="@drawable/ic_close"
+                tools:visibility="visible" />
+
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                style="@style/ProgressBarHorizontal"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLogo"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginStart="@dimen/_minus20sdp"
+                android:layout_marginEnd="@dimen/_minus20sdp"
+                android:adjustViewBounds="true"
+                android:gravity="center"
+                android:setBouncingEffect="@{true}"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTimer"
+                app:layout_constraintEnd_toStartOf="@id/ivEarning"
+                app:layout_constraintStart_toEndOf="@id/ivTimer"
+                app:layout_constraintTop_toTopOf="@id/ivTimer"
+                app:srcCompat="@drawable/icon_tutorial_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTimer"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginStart="@dimen/_minus20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:adjustViewBounds="true"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintEnd_toStartOf="@+id/ivLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClock"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/ic_timer"
+                app:layout_constraintEnd_toEndOf="@id/ivTimer"
+                app:layout_constraintStart_toStartOf="@id/ivTimer"
+                app:layout_constraintTop_toTopOf="@id/ivTimer"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:tint="@color/colorWhite" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFocusTime"
+                style="@style/FontSecondaryBold.Number"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:setValue="@{(statistics==null ? `00:00:00`:ViewUtil.convertToHHMMSS(statistics.totalTimeSpentInSec * 1000))}"
+                android:text="0.00 mtr"
+                android:textColor="@color/colorTextPrimaryInverse"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivTimer"
+                app:layout_constraintStart_toStartOf="@+id/ivTimer"
+                app:layout_constraintTop_toBottomOf="@+id/ivClock"
+                tools:text="00:00:00" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvFocusTimeLbl"
+                style="@style/FontPrimaryMedium.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/total_time"
+                android:textSize="@dimen/_5ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivTimer"
+                app:layout_constraintStart_toStartOf="@+id/ivTimer"
+                app:layout_constraintTop_toBottomOf="@+id/tvFocusTime" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivEarning"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginEnd="@dimen/_minus20sdp"
+                android:adjustViewBounds="true"
+                android:rotationY="180"
+                app:layout_constraintBottom_toBottomOf="@id/ivTimer"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivLogo"
+                app:layout_constraintTop_toTopOf="@id/ivTimer" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRocket"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/ic_dollar"
+                app:layout_constraintEnd_toEndOf="@id/ivEarning"
+                app:layout_constraintStart_toStartOf="@id/ivEarning"
+                app:layout_constraintTop_toTopOf="@+id/ivEarning"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:tint="@color/colorWhite" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCPM"
+                style="@style/FontSecondaryBold.Number"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:setValue="@{(statistics==null ? `$0.0000`:statistics.getBalanceWithCurrency())}"
+                android:text="$0.0000"
+                android:textColor="@color/colorTextPrimaryInverse"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivEarning"
+                app:layout_constraintStart_toStartOf="@+id/ivEarning"
+                app:layout_constraintTop_toBottomOf="@+id/ivRocket" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCPMlbl"
+                style="@style/FontPrimaryMedium.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/total_earning"
+                android:textSize="@dimen/_5ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivEarning"
+                app:layout_constraintStart_toStartOf="@+id/ivEarning"
+                app:layout_constraintTop_toBottomOf="@+id/tvCPM" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatus"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextViewShadow"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toTopOf="@+id/tvStatusSub"
+                app:layout_constraintEnd_toEndOf="@+id/ivEarning"
+                app:layout_constraintStart_toStartOf="@+id/ivTimer"
+                app:layout_constraintTop_toBottomOf="@id/ivTimer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatusSub"
+                style="@style/FontPrimaryMedium.TextColor.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_minus10sdp"
+                android:gravity="center"
+                android:text="@string/usage_stats"
+                android:textAppearance="@style/TextViewShadow"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivEarning"
+                app:layout_constraintStart_toStartOf="@+id/ivTimer"
+                app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

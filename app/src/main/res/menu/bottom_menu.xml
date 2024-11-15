@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navReferral"
+        android:icon="@drawable/ic_nav_referral"
+        android:title="@string/referral" />
+
+    <item
+        android:id="@+id/navOffers"
+        android:icon="@drawable/ic_nav_offers"
+        android:title="@string/offers" />
+
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/ic_nav_home"
+        android:title="@string/home" />
+
+
+    <item
+        android:id="@+id/navLeaderboard"
+        android:icon="@drawable/ic_nav_leaderboard"
+        android:title="@string/leaderboard" />
+
+    <item
+        android:id="@+id/navWithdraw"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="@string/profile" />
+</menu>

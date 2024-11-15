@@ -1,0 +1,99 @@
+[versions]
+agp = "8.5.2"
+firebase-core = "21.1.1"
+kotlin = "2.0.0"
+kotlin-kapt = "2.0.0"
+core-ktx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.1.4"
+flexbox = "3.0.0"
+
+gson-version = "2.10.1"
+retrofit = "2.9.0"
+gson-convertor = "2.9.0"
+logging-interceptor = "5.0.0-alpha.12"
+sdp-version = "1.1.1"
+glide-version = "4.16.0"
+coroutine = "1.8.0"
+activity-ext = "1.9.3"
+fragment-ext = "1.8.4"
+
+navigation-fragment-ktx = "2.8.3"
+navigation-ui-ktx = "2.8.3"
+safe-args = "2.8.3"
+fb-version = "14.1.1"
+
+monetization-version = "3.6.91-beta04"
+withdraw-version = "3.0.7"
+offerwall-version = "v2.0.0-rc15"
+invite-friend-version = "v2.0.3"
+
+lifecycle-livedata-ktx = "2.8.6"
+lifecycle-viewmodel-ktx = "2.8.6"
+lifecycle-viewmodel-compose = "2.8.6"
+workRuntimeKtx = "2.9.1"
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+coroutine = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutine-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ext" }
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ext" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-livedata-ktx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation-fragment-ktx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation-ui-ktx" }
+androidx-lifecycle-ext = { group = "androidx.lifecycle", name = "lifecycle-extensions", version = "2.2.0" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose" }
+
+firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "firebase-core" }
+
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson-version" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-scalar = { group = "com.squareup.retrofit2", name = "converter-scalars", version = "2.9.0" }
+gson-convertor = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson-convertor" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor" }
+
+facebook-sdk = { group = "com.facebook.android", name = "facebook-android-sdk", version.ref = "fb-version" }
+androidx-paging = { group = "androidx.paging", name = "paging-runtime-ktx", version = "3.3.2" }
+
+sdp-dimens = { group = "com.intuit.sdp", name = "sdp-android", version.ref = "sdp-version" }
+ssp-dimens = { group = "com.intuit.ssp", name = "ssp-android", version.ref = "sdp-version" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide-version" }
+shimmer-view = { group = "xyz.peridy.shimmer", name = "shimmerlayout", version = "1.1" }
+lottie = { group = "com.airbnb.android", name = "lottie", version = "6.4.0" }
+graph = { group = "com.github.PhilJay", name = "MPAndroidChart", version = "v3.1.0" }
+joda-time = { module = "joda-time:joda-time", version = "2.12.5" }
+flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+
+applovin-sdk = { group = "com.applovin", name = "applovin-sdk", version = "12.5.0" }
+
+givvy-offerwall-lib = { group = "com.github.Teodor-N-Dimitrov", name = "Offerwall-lib", version.ref = "offerwall-version" }
+givvy-monetization-lib = { group = "com.github.Teodor-N-Dimitrov", name = "Monetization-lib", version.ref = "monetization-version" }
+givvy-withdraw-lib = { group = "com.github.Teodor-N-Dimitrov", name = "Withdraw-lib", version.ref = "withdraw-version" }
+givvy-invitefriend-lib = { group = "com.github.Teodor-N-Dimitrov", name = "invite-friend-lib", version.ref = "invite-friend-version" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+
+#androidx-baseLibrary = { group = "androidx.databinding", name = "baseLibrary", version.ref = "baseLibrary" }
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-kapt" }
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin-kapt" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safe-args" }
+fyber-fairbid-sdk = { id = "com.fyber.fairbid-sdk-plugin", version = "3.51.0" }
+

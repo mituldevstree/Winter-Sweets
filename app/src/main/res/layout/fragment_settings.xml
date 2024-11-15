@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.app.development.winter.shared.model.User" />
+
+        <variable
+            name="adapterSetting"
+            type="com.app.development.winter.ui.settings.SettingAdapter" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"
+            app:appTitle="@{@string/settings}"
+            app:showBack="@{true}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/_90sdp">
+
+                <!--Guideline of the layout-->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_begin="0dp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_begin="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_end="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_end="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <!--Other part of the layout-->
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_minus2sdp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_circle_gradient"
+                    app:layout_constraintBottom_toBottomOf="@+id/userProfile"
+                    app:layout_constraintEnd_toEndOf="@+id/userProfile"
+                    app:layout_constraintStart_toStartOf="@+id/userProfile"
+                    app:layout_constraintTop_toTopOf="@+id/userProfile" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/userProfile"
+                    android:layout_width="@dimen/_105sdp"
+                    android:layout_height="@dimen/_105sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:adjustViewBounds="true"
+                    android:imageResource="@{user.getUserAvtar()}"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/guidelineTop"
+                    tools:src="@drawable/avatar_8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtUserName"
+                    style="@style/FontSecondaryBold.TextColor.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:onClick="@{clickListener::onClick}"
+                    android:setValue="@{user.name}"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/userProfile"
+                    tools:text="username" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtCountry"
+                    style="@style/FontPrimaryMedium.TextColor.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="@{clickListener::onClick}"
+                    android:setValue="@{user.country}"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtUserName"
+                    app:layout_constraintStart_toStartOf="@+id/txtUserName"
+                    app:layout_constraintTop_toBottomOf="@+id/txtUserName"
+                    tools:text="Country" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvItems"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:adapter="@{adapterSetting}"
+                    android:background="@drawable/graph_background"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:padding="@dimen/_5sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCountry"
+                    app:layout_constraintVertical_bias="0"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/row_setting" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

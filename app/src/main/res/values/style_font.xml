@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Montserrat font style -->
+    <style name="FontSecondaryBold">
+        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="FontPrimaryBold">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:lineSpacingMultiplier">0.825</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="FontPrimaryMedium">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:lineSpacingMultiplier">0.825</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="FontPrimaryRegular">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:lineSpacingMultiplier">0.825</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="FontSecondaryBold.TextColor.Primary" parent="FontSecondaryBold">
+        <item name="android:textColor">@color/colorTextPrimaryInverse</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+    </style>
+
+
+    <style name="FontSecondaryBold.TextColor.Secondary" parent="FontSecondaryBold">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+    </style>
+
+    <style name="FontSecondaryBold.Number">
+        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textAppearance">@style/TextViewShadow</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="FontPrimaryBold.TextColor.Primary" parent="FontPrimaryBold">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+    </style>
+
+    <style name="FontPrimaryBold.TextColor.Secondary" parent="FontPrimaryBold">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="FontPrimaryMedium.TextColor.Primary" parent="FontPrimaryMedium">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="FontPrimaryMedium.TextColor.Secondary" parent="FontPrimaryMedium">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="FontPrimaryRegular.TextColor.Primary" parent="FontPrimaryRegular">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="FontPrimaryRegular.TextColor.Secondary" parent="FontPrimaryRegular">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+</resources>

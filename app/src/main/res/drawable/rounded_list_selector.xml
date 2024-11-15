@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorRipple">
+    <item>
+        <selector>
+            <item android:state_selected="true">
+                <layer-list>
+                    <item>
+                        <shape android:shape="rectangle">
+                            <corners android:radius="@dimen/_25sdp" />
+                            <gradient
+                                android:angle="90"
+                                android:endColor="@color/colorStrokeDark"
+                                android:startColor="@color/colorStroke" />
+                        </shape>
+                    </item>
+                    <item
+                        android:bottom="1dp"
+                        android:end="1dp"
+                        android:start="1dp"
+                        android:top="1dp">
+                        <shape android:shape="rectangle">
+                            <corners android:radius="@dimen/_25sdp" />
+                            <gradient
+                                android:angle="90"
+                                android:centerColor="@color/colorTertiary"
+                                android:endColor="@color/colorTertiary"
+                                android:startColor="@color/colorTertiaryVariant" />
+                        </shape>
+                    </item>
+                </layer-list>
+            </item>
+            <item android:state_selected="false">
+                <layer-list>
+                    <item>
+                        <shape android:shape="rectangle">
+                            <corners android:radius="@dimen/_25ssp" />
+                            <gradient
+                                android:angle="90"
+                                android:endColor="@color/colorStrokeDark"
+                                android:startColor="@color/colorStroke" />
+                        </shape>
+                    </item>
+                    <item
+                        android:bottom="1dp"
+                        android:end="1dp"
+                        android:start="1dp"
+                        android:top="1dp">
+                        <shape android:shape="rectangle">
+                            <corners android:radius="@dimen/_25ssp" />
+                            <gradient
+                                android:angle="90"
+                                android:endColor="@color/colorEditTextBg"
+                                android:startColor="@color/colorEditTextBg" />
+                        </shape>
+                    </item>
+                </layer-list>
+            </item>
+        </selector>
+    </item>
+</ripple>

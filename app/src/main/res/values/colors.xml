@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#181c25</color>
+    <color name="colorPrimaryLight">#505F75</color>
+    <color name="colorPrimaryVariant">#141821</color>
+    <color name="colorPrimaryDarker">#9914122F</color>
+    <color name="colorTertiary">#FEB71A</color>
+    <color name="colorTertiaryVariant">#D59912</color>
+    <color name="colorSecondary">#FD2F0D</color>
+    <color name="colorSecondaryVariant">#D0683E</color>
+
+    <color name="colorGraphStart">#FD4C0F</color>
+    <color name="colorGraphEnd">#FEB319</color>
+    <color name="colorGraphStrokeStart">#FCD482</color>
+    <color name="colorGraphStrokeEnd">#AE340E</color>
+
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorBlackAlpha50">#80000000</color>
+    <color name="colorBlackAlpha35">#59000000</color>
+    <color name="colorBlackAlpha15">#26000000</color>
+    <color name="colorBlackAlpha5">#0D000000</color>
+
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorWhiteAlpha75">#BFFFFFFF</color>
+    <color name="colorWhiteAlpha50">#80FFFFFF</color>
+    <color name="colorWhiteAlpha30">#4DFFFFFF</color>
+    <color name="colorWhiteAlpha15">#26FFFFFF</color>
+    <color name="colorWhiteAlpha5">#0DFFFFFF</color>
+
+    <color name="colorEditTextBg">#121621</color>
+
+    <color name="colorRed">#FF4242</color>
+
+    <color name="colorTextHint">#B3FFFFFF</color>
+    <color name="colorTextShadow">#606163</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextPrimaryInverse">#FEB71A</color>
+    <color name="colorTextSecondary">#CAD1D7</color>
+    <color name="colorTextSecondaryInverse">#FFFFFF</color>
+
+    <color name="colorNavigationBar">#01000000</color>
+    <color name="colorNavigationBardDark">#141821</color>
+    <color name="colorBannerBackground">@color/colorNavigationBardDark</color>
+    <color name="colorStroke">#803C3951</color>
+    <color name="colorStrokeDark">#111217</color>
+    <color name="colorRipple">#26000000</color>
+
+    <color name="colorDefaultViewColor">#40FFFFFF</color>
+    <color name="colorDefaultViewColorAlt">#1AFFFFFF</color>
+    <color name="colorDefaultViewColorVariant">#3d4454</color>
+    <color name="colorShimmer">#505F75</color>
+    <color name="colorShimmerAlt">#000000</color>
+
+    <color name="default_thumb_filled_color">#000000</color>
+    <color name="default_thumb_unfilled_color">#6F6F6F</color>
+    <color name="default_track_filled_color">#000000</color>
+    <color name="default_track_unfilled_color">#A9A9A9</color>
+</resources>

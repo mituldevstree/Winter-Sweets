@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Styles for Bottom Sheet Dialog  -->
+    <style name="BottomSheetModal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowBackground">@drawable/window_background</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateHidden</item>
+        <item name="bottomSheetStyle">@style/BottomSheetModal</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/colorNavigationBar</item>
+    </style>
+
+    <style name="App.BottomNavigationView.TextAppearance.Active" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="Widget.Input.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:minHeight">@dimen/_34sdp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingStart">@dimen/_15sdp</item>
+        <item name="android:paddingEnd">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:inputType">textCapWords|textNoSuggestions</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="Widget.Input.EditText.Multiline" parent="Widget.Input.EditText">
+        <item name="android:maxLines">8</item>
+        <item name="android:minLines">5</item>
+        <item name="android:lines">12</item>
+        <item name="android:paddingStart">@dimen/_15sdp</item>
+        <item name="android:paddingEnd">@dimen/_15sdp</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">textMultiLine|textCapSentences</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/activity_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_fade_out</item>
+    </style>
+
+    <!-- Button Styling  -->
+
+    <style name="Widget.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minHeight">@dimen/_48sdp</item>
+        <item name="android:minWidth">@dimen/_130sdp</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:paddingTop">@dimen/_8sdp</item>
+        <item name="android:paddingStart">@dimen/_20sdp</item>
+        <item name="android:paddingEnd">@dimen/_20sdp</item>
+        <item name="android:textColor">@color/text_color_white_primary_selector</item>
+        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+        <item name="android:background">@drawable/button_primary</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.Button.Secondary" parent="Widget.Button.Primary">
+        <item name="android:background">@drawable/button_primary</item>
+    </style>
+
+    <style name="Widget.Button.Icon" parent="Widget.Button.Primary">
+        <item name="iconGravity">start</item>
+        <item name="iconTint">@null</item>
+        <item name="iconSize">@dimen/_22sdp</item>
+        <item name="iconPadding">@dimen/_7sdp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Switch.Compat" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/ic_switch_thumb_selector</item>
+        <item name="android:track">@drawable/ic_switch_track_selector</item>
+        <item name="android:showText">false</item>
+        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="showText">false</item>
+    </style>
+
+    <!-- Shape appearance-->
+
+    <style name="CustomTextViewShadow">
+        <item name="android:shadowColor">@color/colorTextShadow</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+    </style>
+
+    <style name="TextViewShadow">
+        <item name="android:shadowColor">@color/colorWhiteAlpha5</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+    </style>
+
+    <style name="ProgressBarHorizontal">
+        <item name="android:layout_width">@dimen/_80sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="trackThickness">@dimen/_3sdp</item>
+        <item name="trackCornerRadius">@dimen/_3sdp</item>
+        <item name="trackColor">@color/colorPrimaryDarker</item>
+        <item name="indicatorColor">@color/colorTertiary</item>
+        <item name="indicatorDirectionLinear">startToEnd</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDarker</item>
+        <item name="android:background">@drawable/rounded_corner_white</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+
+    <style name="Referral.Lib.TextView.Header.App" parent="FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_25ssp</item>
+    </style>
+
+    <style name="Referral.Lib.TextView.Title.App" parent="FontSecondaryBold.TextColor.Primary">
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+    <style name="Referral.Lib.List.Title.App" parent="FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="Referral.Lib.List.Description.App" parent="Referral.Lib.List.Description">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Referral.Lib.Milestone.Level.Title.App" parent="FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+    <style name="Wallet.Lib.Button.Primary.App" parent="@style/Widget.Button.Primary" />
+
+    <style name="Wallet.Lib.Button.Secondary.App" parent="@style/Wallet.Lib.Button.Primary">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:background">@drawable/button_secondary</item>
+    </style>
+
+    <style name="Wallet.Lib.Button.Primary.Icon.App" parent="@style/Wallet.Lib.Button.Primary.Icon">
+        <item name="android:background">@drawable/button_primary_small</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:minHeight">@dimen/_42sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_7sdp</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="Wallet.Lib.Button.Secondary.Icon.App" parent="@style/Wallet.Lib.Button.Primary.Icon">
+        <item name="android:minHeight">@dimen/_35sdp</item>
+        <item name="android:background">@drawable/button_secondary</item>
+    </style>
+
+    <style name="Wallet.Lib.TextView.Header.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_25ssp</item>
+    </style>
+
+    <style name="Wallet.Lib.TextView.Sub.Header.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Wallet.Lib.Input.Field.Style.App" parent="Wallet.Lib.Input.Field.Style">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="Wallet.Lib.Input.Field.Label.Style.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:layout_marginStart">@dimen/_15sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_15sdp</item>
+    </style>
+
+
+    <style name="Offerwall.Lib.TextView.Page.Title.App" parent="FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_25ssp</item>
+    </style>
+
+    <style name="Offerwall.Lib.TextView.Page.Sub.Title.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Offerwall.Lib.TextView.Section.Header.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="Offerwall.Lib.TextView.Reward.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Offerwall.Lib.List.Reward.App" parent="@style/FontSecondaryBold.TextColor.Secondary">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+</resources>

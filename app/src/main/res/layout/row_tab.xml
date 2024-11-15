@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tabModel"
+            type="com.app.development.winter.ui.profile.model.TabModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp">
+
+        <View
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="@dimen/_5sdp"
+            android:background="@drawable/lib_circle_white"
+            android:backgroundTint="@color/colorTertiary"
+            android:isInvisible="@{!tabModel.selectedTab}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/FontPrimaryRegular.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:selected="@{tabModel.selectedTab}"
+            android:setValue="@{tabModel.name}"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color_white_tertiary_selector"
+            android:textSize="@dimen/_10ssp"
+            tools:text="Daily" />
+    </LinearLayout>
+</layout>

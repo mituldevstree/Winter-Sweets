@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.app.development.winter.localcache.LocalDataHelper" />
+
+        <variable
+            name="sessionData"
+            type="com.app.development.winter.ui.session.model.SessionData" />
+
+        <import type="com.app.development.winter.utility.ViewUtil" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/window_background"
+        android:keepScreenOn="true"
+        android:theme="@style/Theme.App">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="0dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieHomeAnimation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:setSessionPageAnimation="@{true}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_loop="true"
+            tools:src="@drawable/app_logo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:animateLayoutChanges="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolbar"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_end="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtLevel"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:setValue="@{@string/level +` `+ sessionData.currentLevel+``}"
+                android:textAppearance="@style/TextViewShadow"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/_28ssp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Level 10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEarningInUsd"
+                style="@style/FontPrimaryBold.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:setValue="@{sessionData.currentEarningsData.getBalanceWithCurrency}"
+                android:text="$0.0000"
+                android:textAppearance="@style/TextViewShadow"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/txtLevel" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constGameSessionDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/ic_game_slider"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.40"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/layoutSessionInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:constraint_referenced_ids="txtSpentTime,txtSpeed,txtPercentage,dot1,dot2,dot3,lblNextLevel" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnSessionInfo"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:onClick="@{(v)->clickListener.onClick(v)}"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintBottom_toTopOf="@id/dot1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_next" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dot1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/txtSpentTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSessionInfo"
+                    app:srcCompat="@drawable/ic_separator_dot" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtSpentTime"
+                    style="@style/FontSecondaryBold.Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:drawableTop="@drawable/ic_timer"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:maxEms="8"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/_32sdp"
+                    android:setValue="@{ViewUtil.convertToHHMMSS(sessionData.totalSpentSessionTime * 1000)}"
+                    android:textColor="@color/colorTextPrimaryInverse"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toTopOf="@id/dot2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dot1"
+                    tools:text="00:00:00" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dot2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/txtSpeed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtSpentTime"
+                    app:srcCompat="@drawable/ic_separator_dot" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtSpeed"
+                    style="@style/FontSecondaryBold.Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_speed"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:setValue="@{sessionData.CurrentEarningsData.getGcmSpeed()}"
+                    android:textColor="@color/colorTextPrimaryInverse"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toTopOf="@id/dot3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dot2"
+                    tools:text="00 GCM " />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dot3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/txtPercentage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtSpeed"
+                    app:srcCompat="@drawable/ic_separator_dot" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtPercentage"
+                    style="@style/FontSecondaryBold.Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableTop="@drawable/ic_percentage"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:setValue="@{sessionData.leftPercentage}"
+                    android:textColor="@color/colorTextPrimaryInverse"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dot3"
+                    tools:text="50%" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/lblNextLevel"
+                    style="@style/FontPrimaryMedium.TextColor.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:maxWidth="@dimen/_38sdp"
+                    android:text="@string/next_level"
+                    android:textSize="@dimen/_6ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtPercentage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLevelInstruction"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:setTextBoldForeground="@{sessionData.currentEarningsData.earningPercentForACoin+``}"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toTopOf="@+id/stageStepBar"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                app:layout_constraintWidth_percent="0.75"
+                tools:text="@string/progress_text_earning_mode" />
+
+            <com.app.development.winter.shared.views.stepprogress.StageStepBar
+                android:id="@+id/stageStepBar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_45sdp"
+                android:background="@drawable/line_progress_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@+id/guidelineStart"
+                app:layout_constraintWidth_percent="0.75"
+                app:ssb_activeThumbDrawable="@drawable/ic_session_progress_thumb"
+                app:ssb_animate="true"
+                app:ssb_animationDuration="500"
+                app:ssb_currentState="0,0"
+                app:ssb_filledThumbDrawable="@drawable/ic_session_progress_thumb"
+                app:ssb_filledTrackDrawable="@drawable/filled_track_progress"
+                app:ssb_orientation="horizontal"
+                app:ssb_showThumbs="true"
+                app:ssb_stageStepConfig="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                app:ssb_thumbSize="@dimen/_8sdp"
+                app:ssb_unfilledThumbDrawable="@drawable/ic_session_progress_thumb"
+                app:ssb_unfilledTrackColor="#00FECD35" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/btnMakeTransparent"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:onClick="@{(v)->clickListener.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <FrameLayout
+            android:id="@+id/gameView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:rotation="180"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnMoveBack"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:onClick="@{(v)->clickListener.onClick(v)}"
+            android:setImageSelector="@{true}"
+            android:src="@drawable/ic_game_previous"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnMoveForward"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:onClick="@{(v)->clickListener.onClick(v)}"
+            android:setImageSelector="@{true}"
+            android:src="@drawable/ic_game_next"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/gameContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btnMoveBack,btnMoveForward,gameView" />
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:clickListener="@{clickListener}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+            app:showClose="@{true}"
+            app:showProfile="@{false}" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAppLoaderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/loading_view_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:setAppDefaultLoader="@{false}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_repeatMode="reverse" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtErrorMessage"
+                style="@style/FontSecondaryBold.TextColor.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="0dp"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
+                tools:text="@string/loading" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/layoutDialog"
+            layout="@layout/dialog_end_session"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:clickListener="@{clickListener}"
+            app:sessionData="@{sessionData}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

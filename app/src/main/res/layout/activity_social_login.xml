@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.useronboarding.SocialLoginActivity">
+
+        <!--Guideline of the layout-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--Other part of the layout-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgAppLogo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+            app:srcCompat="@drawable/app_logo" />
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/layout_toolbar"
+            app:appTitle="@{@string/sign_up}"
+            app:subTitle="@{@string/sign_up_effortlessly_using_your_google_account}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            style="@style/Widget.Button.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:maxLines="1"
+            android:onClick="@{(v)->clickListener.onClick(v)}"
+            android:paddingStart="@dimen/_20sdp"
+            android:setValue="@{@string/log_in_with_google}"
+            android:text="@string/log_in_with_google"
+            app:autoSizeMaxTextSize="@dimen/_14ssp"
+            app:autoSizeMinTextSize="@dimen/_10ssp"
+            app:autoSizeTextType="uniform"
+            app:icon="@drawable/icon_google"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/imgAppLogo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTermsCondition"
+            style="@style/FontPrimaryMedium.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="@string/by_clicking_the_continue_button_you_agree_with_our_terms_and_conditions_and_our_privacy_policy"
+            android:textColorLink="@color/colorTertiary"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSkip"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="end"
+            android:onClick="@{(v) -> clickListener.onClick(v)}"
+            android:textAllCaps="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressView"
+            style="@style/ProgressBarHorizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineBottom" />
+
+        <include layout="@layout/layout_loading_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

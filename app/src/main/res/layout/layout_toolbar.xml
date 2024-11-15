@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <import type="com.app.development.winter.localcache.LocalDataHelper" />
+
+        <variable
+            name="appTitle"
+            type="String" />
+
+        <variable
+            name="subTitle"
+            type="String" />
+
+        <variable
+            name="showBack"
+            type="Boolean" />
+
+        <variable
+            name="showProfile"
+            type="Boolean" />
+
+        <variable
+            name="showSetting"
+            type="Boolean" />
+
+        <variable
+            name="showClose"
+            type="Boolean" />
+
+        <variable
+            name="showNotification"
+            type="Boolean" />
+
+        <variable
+            name="showSwitch"
+            type="Boolean" />
+
+        <variable
+            name="showDownloadFeature"
+            type="Boolean" />
+
+        <variable
+            name="showAdDebuggerOption"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:minHeight="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_collapseMode="pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:isVisible="@{showBack}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:layout_goneMarginEnd="0dp"
+                app:srcCompat="@drawable/ic_back" />
+
+            <View
+                android:id="@+id/viewProfileBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_minus15sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:alpha="0.75"
+                android:background="@drawable/rounded_list_selector"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                app:layout_constraintBottom_toBottomOf="@+id/userImage"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/userImage"
+                app:layout_constraintTop_toTopOf="@+id/userImage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userImage"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_minus5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:adjustViewBounds="true"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginStart="0dp"
+                app:srcCompat="@drawable/ic_coin" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/FontPrimaryBold.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxWidth="@dimen/_120sdp"
+                android:maxLines="1"
+                android:minWidth="@dimen/_40sdp"
+                android:setNumericAdverb="@{LocalDataHelper.INSTANCE.userDetail.coinBalance}"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toEndOf="@id/userImage"
+                app:layout_constraintTop_toTopOf="@+id/userImage"
+                tools:text="0,00,000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAmount"
+                style="@style/FontPrimaryMedium.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:setValue="@{LocalDataHelper.INSTANCE.userDetail.getBalanceWithCurrency()}"
+                android:textSize="@dimen/_6ssp"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="$00.00" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupUserDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isVisible="@{showProfile}"
+                android:visibility="gone"
+                app:constraint_referenced_ids="userImage,tvAmount,tvName,viewProfileBg"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:isInVisible="@{appTitle.equals(``)}"
+                android:paddingHorizontal="@dimen/_38sdp"
+                android:setValue="@{appTitle}"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/_25ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/app_name"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSubTitle"
+                style="@style/FontPrimaryRegular.TextColor.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="center"
+                android:isGone="@{subTitle.equals(``)}"
+                android:setValue="@{subTitle}"
+                android:textSize="@dimen/_9ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+                tools:text="@string/demo_small"
+                tools:visibility="gone" />
+
+            <Switch
+                android:id="@+id/btnSwitch"
+                style="@style/Switch.Compat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:isVisible="@{showSwitch}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnAdDebugger"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:isVisible="@{showAdDebuggerOption}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:padding="@dimen/_6sdp"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btnDownloadFeature"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/btnBack"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:srcCompat="@drawable/ic_debugger"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnDownloadFeature"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:isVisible="@{showDownloadFeature}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btnSettings"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/btnAdDebugger"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:srcCompat="@drawable/ic_download_feature"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnSettings"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:adjustViewBounds="true"
+                android:isVisible="@{showSetting}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btnNotification"
+                app:layout_constraintStart_toEndOf="@+id/btnDownloadFeature"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:srcCompat="@drawable/ic_settings"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnNotification"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:isVisible="@{showNotification}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btnClose"
+                app:layout_constraintStart_toEndOf="@+id/btnSettings"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:srcCompat="@drawable/ic_notification"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/topBarIconSize"
+                android:layout_height="@dimen/topBarIconSize"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:isVisible="@{showClose}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:setImageSelector="@{true}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnNotification"
+                app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                app:srcCompat="@drawable/ic_close"
+                tools:visibility="gone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>

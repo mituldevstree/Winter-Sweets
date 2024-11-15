@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Referral.Lib.Theme" parent="ReferralLibTheme">
+        <item name="referralLibBackground">@drawable/window_background</item>
+        <item name="referralLibHomePageBackground">@null</item>
+        <item name="referralLibListBackground">@drawable/ic_referral_list_background</item>
+        <item name="referralLibGiveawayListBackground">@drawable/ic_giveaway_list_background</item>
+        <item name="referralLibEditTextBackground">@drawable/edittext_bg</item>
+
+        <item name="referralLibIconShare">@drawable/ic_share</item>
+        <item name="referralLibIconCopy">@drawable/ic_copy</item>
+        <item name="referralLibIconFriends">@drawable/ic_friends</item>
+        <item name="referralLibIconInfo">@drawable/ic_information</item>
+        <item name="referralLibIconClose">@drawable/ic_close</item>
+        <item name="referralLibIconDown">@drawable/icon_arrow_down</item>
+        <item name="referralLibGivvyLogo">@drawable/ic_referral_lib_givvy_logo</item>
+        <item name="referralLibLevelCrown">@drawable/ic_level_crown</item>
+        <item name="referralLibLevelBackground">@drawable/ic_level_background</item>
+        <item name="referralLibLeaderBoardProfileBackground">@drawable/ic_circle_gradient</item>
+
+        <item name="referralLibHomePageIcon">@drawable/lib_home_page_icon</item>
+        <item name="referralLibHomePageIconBackground">@android:color/transparent</item>
+        <item name="referralLibInfoPageIcon">@drawable/lib_home_page_icon</item>
+        <item name="referralLibGiveawayPageIcon">@drawable/lib_giveaway_page_icon</item>
+        <item name="referralLibLeaderboardPageIcon">@drawable/lib_leaderboard_page_icon</item>
+        <item name="referralLibMilestonePageIcon">@drawable/lib_milestone_page_icon</item>
+        <item name="referralLibContentCreatorPageIcon">@drawable/lib_content_creator_page_icon
+        </item>
+        <item name="referralLibGiveawayLostPageIcon">@drawable/lib_giveaway_lost_page_icon</item>
+        <item name="referralLibLinkApprovedPageIcon">@drawable/lib_link_approved_page_icon</item>
+        <item name="referralLibLinkRejectedPageIcon">@drawable/lib_link_rejected_page_icon</item>
+        <item name="referralLibLinkSubmittedPageIcon">@drawable/lib_link_submitted_page_icon</item>
+
+        <item name="referralLibTopBarIconSize">@dimen/topBarIconSize</item>
+        <item name="referralLibDownIconSize">@dimen/_35sdp</item>
+        <item name="referralLibShareCopyIconSize">@dimen/_52sdp</item>
+        <item name="referralLibSelectorType">DIMMED</item>
+        <item name="referralLibIsUseDefaultSelector">false</item>
+        <item name="referralLibShimmerViewAlpha">0.15</item>
+
+        <item name="referralLibContentPaddingTop">0dp</item>
+        <item name="referralLibContentPaddingBottom">@dimen/_60sdp</item>
+        <item name="referralLibContentPaddingHorizontal">@dimen/_10sdp</item>
+        <item name="referralLibGiveawayListHorizontalPadding">@dimen/_17sdp</item>
+        <item name="referralLibGiveawayListVerticalPadding">@dimen/_5sdp</item>
+
+        <item name="referralLibColorGivvyLogo">@color/colorTertiary</item>
+        <item name="referralLibColorTertiary">@color/colorTertiary</item>
+        <item name="referralLibTextColorPrimary">@color/colorTextPrimary</item>
+        <item name="referralLibTextColorPrimaryInverse">@color/colorTextPrimaryInverse</item>
+        <item name="referralLibTextColorSecondary">@color/colorTextPrimary</item>
+        <item name="referralLibTextColorSecondaryInverse">@color/colorTextSecondaryInverse</item>
+        <item name="referralLibTextColorHint">@color/colorTextHint</item>
+        <item name="referralLibColorShimmer">@color/referralLibColorShimmer</item>
+
+        <item name="referralLibProgressBarColorNormal">@color/colorPrimaryDarker</item>
+        <item name="referralLibProgressBarColorSelected">@color/colorTertiary</item>
+
+        <item name="referralLibPrimaryButtonStyle">@style/Widget.Button.Primary</item>
+        <item name="referralLibSecondaryButtonStyle">@style/Widget.Button.Secondary</item>
+
+        <item name="referralLibTextViewHeaderStyle">@style/Referral.Lib.TextView.Header.App</item>
+        <item name="referralLibTextViewTitleStyle">@style/Referral.Lib.TextView.Title.App</item>
+        <item name="referralLibListTitleStyle">@style/Referral.Lib.List.Title.App</item>
+        <item name="referralLibListDescriptionStyle">@style/Referral.Lib.List.Description.App</item>
+        <item name="referralLibMilestoneLevelTitleStyle">
+            @style/Referral.Lib.Milestone.Level.Title.App
+        </item>
+    </style>
+
+    <style name="Wallet.Lib.Theme" parent="WalletLibTheme">
+        <item name="walletLibBackground">@drawable/window_background</item>
+        <item name="walletLibHomePageBackground">@null</item>
+        <item name="walletLibRaysImage">@null</item>
+
+        <item name="walletLibIconClose">@drawable/ic_close</item>
+        <item name="walletLibIconBack">@drawable/ic_back</item>
+
+        <!-- Pending-->
+        <item name="walletLibIconErrorPage">@drawable/app_logo</item>
+        <item name="walletLibEditTextBackground">@drawable/edittext_bg</item>
+        <item name="walletLibSeparatorView">@null</item>
+        <item name="walletLibIconClaimedRewardPage">@drawable/lib_icon_claimed_reward_page</item>
+        <item name="walletLibIconRewardPage">@drawable/lib_icon_reward_page</item>
+        <item name="walletLibIconFaceTecPage">@drawable/lib_icon_facetec_page</item>
+        <item name="walletLibIconHomeInstagram">@drawable/lib_icon_home_instagram</item>
+        <item name="walletLibIconHomeSupport">@drawable/lib_icon_home_support</item>
+        <item name="walletLibPaymentProofBackground">@drawable/ic_giveaway_list_background</item>
+        <item name="walletLibEarningViewBackground">@drawable/lib_earning_background</item>
+        <item name="walletLibSquareListBackground">@drawable/lib_square_list_background</item>
+        <item name="walletLibSquareListBackgroundSelected">
+            @drawable/lib_square_list_background_selected
+        </item>
+        <item name="walletLibListBackground">@drawable/edittext_bg</item>
+        <item name="walletLibListBackgroundExpanded">@drawable/edittext_bg</item>
+
+        <item name="walletLibShimmerViewAlpha">0.15</item>
+        <item name="walletLibDialogAlpha">0.65</item>
+        <item name="walletLibTopBarIconSize">@dimen/topBarIconSize</item>
+        <item name="walletLibContentPaddingTop">-1dp</item>
+        <item name="walletLibSupportIconSize">@dimen/_45sdp</item>
+        <item name="walletLibGeneralListHorizontalPadding">@dimen/_12sdp</item>
+        <item name="walletLibGeneralListItemPadding">@dimen/_4sdp</item>
+        <item name="walletLibPaymentProofListHorizontalPadding">@dimen/_20sdp</item>
+        <item name="walletLibPaymentProofPaddingTop">@dimen/_7sdp</item>
+        <item name="walletLibPaymentProofPaddingBottom">@dimen/_10sdp</item>
+        <item name="walletLibContentPaddingBottom">@dimen/_55sdp</item>
+        <item name="walletLibContentPaddingHorizontal">@dimen/_10sdp</item>
+
+        <item name="walletLibSelectorType">DIMMED</item>
+        <item name="walletLibColorPrimary">@color/colorPrimary</item>
+        <item name="walletLibColorTertiary">@color/colorTertiary</item>
+        <item name="walletLibTextColorPrimary">@color/colorTextPrimary</item>
+        <item name="walletLibTextColorPrimaryInverse">@color/colorTextPrimaryInverse</item>
+        <item name="walletLibTextColorSecondary">@color/colorTextPrimary</item>
+        <item name="walletLibTextColorSecondaryInverse">@color/colorTextSecondary</item>
+        <item name="walletLibTextColorHint">@color/colorTextHint</item>
+        <item name="walletLibTextColorError">@color/colorRed</item>
+        <item name="walletLibGeneralDialogBackgroundColor">@color/colorPrimary</item>
+
+        <item name="walletLibPrimaryButtonStyle">@style/Wallet.Lib.Button.Primary.App</item>
+        <item name="walletLibSecondaryButtonStyle">@style/Wallet.Lib.Button.Secondary.App</item>
+        <item name="walletLibIconPrimaryButtonStyle">@style/Wallet.Lib.Button.Primary.Icon.App
+        </item>
+        <item name="walletLibIconSecondaryButtonStyle">@style/Wallet.Lib.Button.Secondary.Icon.App
+        </item>
+
+        <item name="walletLibTextViewHeaderStyle">@style/Wallet.Lib.TextView.Header.App</item>
+        <item name="walletLibTextViewSubHeaderStyle">@style/Wallet.Lib.TextView.Sub.Header.App
+        </item>
+        <item name="walletLibInputFieldLabelStyle">@style/Wallet.Lib.Input.Field.Label.Style.App
+        </item>
+        <item name="walletLibInputFieldStyle">@style/Wallet.Lib.Input.Field.Style.App</item>
+        <item name="walletLibProgressBarHorizontalStyle">@style/ProgressBarHorizontal</item>
+
+    </style>
+
+
+    <style name="Offerwall.Lib.Theme" parent="OfferwallLibTheme">
+        <item name="offerWallBackground">@drawable/window_background</item>
+        <item name="offerWallHomePageBackground">@null</item>
+        <item name="offerWallVerticalListBackground">@drawable/offer_wall_vertical_list_background</item>
+        <item name="offerWallHorizontalListBackground">@drawable/offer_wall_horizontal_list_background</item>
+        <item name="offerWallTaskBackground">@drawable/offer_wall_vertical_list_background</item>
+        <item name="offerWallEarningViewBackground">@drawable/lib_earning_background</item>
+        <item name="offerWallProviderImageBackground">@drawable/offer_wall_image_background</item>
+
+        <item name="offerWallContentPaddingHorizontal">@dimen/_10sdp</item>
+        <item name="offerWallContentPaddingTop">0dp</item>
+        <item name="offerWallContentPaddingBottom">@dimen/_55sdp</item>
+        <item name="offerWallGeneralListHorizontalPadding">@dimen/_6sdp</item>
+        <item name="offerWallGeneralListItemPadding">@dimen/_5sdp</item>
+        <item name="offerWallVerticalListItemPadding">@dimen/_4sdp</item>
+        <item name="offerWallSectionListPaddingStart">@dimen/_4sdp</item>
+
+        <item name="offerWallSeparatorView">@drawable/lib_separator_view</item>
+        <item name="offerWallIconErrorPage">@drawable/app_logo</item>
+        <item name="offerWallIconRewardPage">@drawable/lib_icon_reward_page</item>
+        <item name="offerWallIconClose">@drawable/ic_close</item>
+        <item name="offerWallIconBack">@drawable/ic_back</item>
+        <item name="offerWallIconCoin">@drawable/lib_icon_coin</item>
+
+        <item name="offerWallShimmerViewAlpha">0.10</item>
+        <item name="offerWallDialogAlpha">0.6</item>
+        <item name="offerWallTopBarIconSize">@dimen/topBarIconSize</item>
+        <item name="offerWallSelectorType">DIMMED</item>
+
+        <item name="offerWallColorPrimary">@color/colorPrimary</item>
+        <item name="offerWallColorTertiary">@color/colorTertiary</item>
+        <item name="offerWallColorTextPrimary">@color/colorTextPrimary</item>
+        <item name="offerWallColorTextPrimaryInverse">@color/colorTextPrimaryInverse</item>
+        <item name="offerWallColorTextSecondary">@color/colorTextSecondary</item>
+        <item name="offerWallColorTextSecondaryInverse">@color/colorTextSecondaryInverse</item>
+        <item name="offerWallColorTextHint">@color/colorTextHint</item>
+        <item name="offerWallColorTextError">@color/colorRed</item>
+        <item name="offerWallColorGeneralDialogBackground">@color/colorPrimary</item>
+        <item name="offerWallColorShadowTint">#C6181c25</item>
+
+        <item name="offerWallPrimaryButtonStyle">@style/Widget.Button.Primary</item>
+        <item name="offerWallTextViewPageTitleStyle">@style/Offerwall.Lib.TextView.Page.Title.App
+        </item>
+        <item name="offerWallTextViewPageSubTitleStyle">
+            @style/Offerwall.Lib.TextView.Page.Sub.Title.App
+        </item>
+        <item name="offerWallTextViewSectionHeaderStyle">
+            @style/Offerwall.Lib.TextView.Section.Header.App
+        </item>
+        <item name="offerWallTextViewRewardStyle">@style/Offerwall.Lib.TextView.Reward.App</item>
+        <item name="offerWallListRewardStyle">@style/Offerwall.Lib.List.Reward.App</item>
+        <item name="offerWallProgressBarHorizontalStyle">@style/ProgressBarHorizontal</item>
+    </style>
+</resources>

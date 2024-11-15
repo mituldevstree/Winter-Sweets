@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CarouselView">
+        <attr name="scaleFactor" format="float" />
+        <attr name="itemSpace" format="float" />
+        <attr name="hasAlphaOnItem" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedBarChart">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="StageStepBar">
+        <attr name="ssb_stageStepConfig" format="string" />
+        <attr name="ssb_currentState" format="string" />
+        <attr name="ssb_animate" format="boolean" />
+        <attr name="ssb_animationDuration" format="integer" />
+        <attr name="ssb_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="ssb_horizontalDirection" format="enum">
+            <enum name="auto" value="0" />
+            <enum name="ltr" value="1" />
+            <enum name="rtl" value="2" />
+        </attr>
+        <attr name="ssb_verticalDirection" format="enum">
+            <enum name="ttb" value="0" />
+            <enum name="btt" value="1" />
+        </attr>
+        <attr name="ssb_filledTrackColor" format="color" />
+        <attr name="ssb_unfilledTrackColor" format="color" />
+        <attr name="ssb_filledTrackDrawable" format="reference" />
+        <attr name="ssb_filledTrackDrawableAlpha" format="float" />
+        <attr name="ssb_unfilledTrackDrawable" format="reference" />
+        <attr name="ssb_unfilledTrackDrawableAlpha" format="float" />
+        <attr name="ssb_activeThumbColor" format="color" />
+        <attr name="ssb_filledThumbColor" format="color" />
+        <attr name="ssb_unfilledThumbColor" format="color" />
+        <attr name="ssb_activeThumbDrawable" format="reference" />
+        <attr name="ssb_activeThumbDrawableAlpha" format="float" />
+        <attr name="ssb_filledThumbDrawable" format="reference" />
+        <attr name="ssb_filledThumbDrawableAlpha" format="float" />
+        <attr name="ssb_unfilledThumbDrawable" format="reference" />
+        <attr name="ssb_unfilledThumbDrawableAlpha" format="float" />
+        <attr name="ssb_thumbSize" format="dimension" />
+        <attr name="ssb_crossAxisFilledTrackSize" format="dimension" />
+        <attr name="ssb_crossAxisUnfilledTrackSize" format="dimension" />
+        <attr name="ssb_showThumbs" format="boolean" />
+        <attr name="ssb_drawTracksBehindThumbs" format="boolean" />
+    </declare-styleable>
+</resources>

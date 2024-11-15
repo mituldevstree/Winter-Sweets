@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.App" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorWhite</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorTertiary</item>
+        <item name="colorSecondaryVariant">@color/colorTertiaryVariant</item>
+        <item name="colorOnSecondary">@color/colorSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- change navigation bar color -->
+        <item name="android:navigationBarColor">@color/colorNavigationBar</item>
+        <item name="android:color">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+
+        <item name="android:windowBackground">@drawable/window_background</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="ActivityAnimation" parent="">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_fade_out</item>
+        <item name="android:windowEnterAnimation">@anim/activity_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_fade_out</item>
+    </style>
+
+</resources>

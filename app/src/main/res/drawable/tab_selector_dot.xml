@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:innerRadius="0dp" android:shape="ring" android:thickness="@dimen/_5sdp" android:useLevel="false">
+            <gradient android:angle="90" android:endColor="@color/colorTertiary" android:startColor="@color/colorTertiary" android:type="linear" />
+        </shape>
+    </item>
+    <item>
+        <shape android:innerRadius="0dp" android:shape="ring" android:thickness="@dimen/_3sdp" android:useLevel="false">
+            <solid android:color="@color/colorPrimaryDarker" />
+            <stroke android:width="@dimen/_1sdp" android:color="@color/colorStroke" />
+        </shape>
+    </item>
+</selector>
