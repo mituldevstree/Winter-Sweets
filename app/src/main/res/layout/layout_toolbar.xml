@@ -175,7 +175,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtSubTitle"
-                style="@style/FontPrimaryRegular.TextColor.Secondary"
+                style="@style/FontPrimaryRegular.TextColor.Primary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_35sdp"
@@ -273,7 +273,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/btnClose"
                 app:layout_constraintStart_toEndOf="@+id/btnSettings"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
-                app:srcCompat="@drawable/ic_notification"
+                app:srcCompat="@drawable/ic_notifications"
                 tools:visibility="gone" />
 
             <androidx.appcompat.widget.AppCompatImageView

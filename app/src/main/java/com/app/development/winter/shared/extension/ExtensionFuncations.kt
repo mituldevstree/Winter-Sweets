@@ -1210,7 +1210,7 @@ fun TextView.makeColorNBold(vararg links: String, color: Int) {
             startIndexOfLink + link.length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-        val typeface = ResourcesCompat.getFont(context, R.font.shaun_of_the_dead)
+        val typeface = ResourcesCompat.getFont(context, R.font.baloo)
         spannableString.setSpan(
             CustomTypefaceSpan("", typeface!!),
             startIndexOfLink,

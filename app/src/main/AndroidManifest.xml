@@ -51,7 +51,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="https" />
-                <data android:pathPrefix="/zombieApp/" />
+                <data android:pathPrefix="/winterSweets/" />
                 <data android:host="app-earnings-link.com" />
                 <data android:host="dynamic-universal-link-567a0b6a1e8c.herokuapp.com" />
             </intent-filter>

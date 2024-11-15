@@ -23,9 +23,8 @@
                             <corners android:radius="@dimen/_25sdp" />
                             <gradient
                                 android:angle="90"
-                                android:centerColor="@color/colorTertiary"
-                                android:endColor="@color/colorTertiary"
-                                android:startColor="@color/colorTertiaryVariant" />
+                                android:endColor="#3B324E"
+                                android:startColor="#867CAD" />
                         </shape>
                     </item>
                 </layer-list>

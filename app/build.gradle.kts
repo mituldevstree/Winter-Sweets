@@ -67,7 +67,7 @@ android {
         buildConfigField("long", "FACEBOOK_APP_ID", (facebookAppId) ?: "")
 
         buildConfigField(
-            "String", "SERVER_URL", "\"https://zombie-app-9d968150fe39.herokuapp.com/\""
+            "String", "SERVER_URL", "\"https://winter-sweets-app-ceae11c4832e.herokuapp.com/\""
         )
         buildConfigField(
             "String", "GENERAL_URL", "\"https://givvy-general-config.herokuapp.com/\""

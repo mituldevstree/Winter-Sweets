@@ -30,7 +30,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvItemName"
-            style="@style/FontSecondaryBold.Number"
+            style="@style/FontPrimary.Number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -47,7 +47,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/lblAutoTranslated"
-            style="@style/FontSecondaryBold.Number"
+            style="@style/FontPrimary.Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10sdp"

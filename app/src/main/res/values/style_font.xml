@@ -2,12 +2,12 @@
 <resources>
 
     <!--Montserrat font style -->
-    <style name="FontSecondaryBold">
-        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+    <style name="FontPrimary">
+        <item name="android:fontFamily">@font/baloo</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="FontPrimaryBold">
+    <style name="FontSecondaryBold">
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:lineSpacingMultiplier">0.825</item>
         <item name="android:includeFontPadding">false</item>
@@ -26,8 +26,8 @@
     </style>
 
 
-    <style name="FontSecondaryBold.TextColor.Primary" parent="FontSecondaryBold">
-        <item name="android:textColor">@color/colorTextPrimaryInverse</item>
+    <style name="FontSecondaryBold.TextColor.Primary" parent="FontPrimary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:textSize">@dimen/_20ssp</item>
         <item name="android:textAllCaps">true</item>
@@ -38,7 +38,7 @@
     </style>
 
 
-    <style name="FontSecondaryBold.TextColor.Secondary" parent="FontSecondaryBold">
+    <style name="FontSecondaryBold.TextColor.Secondary" parent="FontPrimary">
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:textSize">@dimen/_11ssp</item>
@@ -48,8 +48,8 @@
         <item name="android:shadowDy">2</item>
     </style>
 
-    <style name="FontSecondaryBold.Number">
-        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+    <style name="FontPrimary.Number">
+        <item name="android:fontFamily">@font/baloo</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:textAppearance">@style/TextViewShadow</item>
@@ -57,7 +57,7 @@
         <item name="android:textSize">@dimen/_11ssp</item>
     </style>
 
-    <style name="FontPrimaryBold.TextColor.Primary" parent="FontPrimaryBold">
+    <style name="FontPrimaryBold.TextColor.Primary" parent="FontSecondaryBold">
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:textSize">@dimen/_11ssp</item>
@@ -67,7 +67,7 @@
         <item name="android:shadowDy">2</item>
     </style>
 
-    <style name="FontPrimaryBold.TextColor.Secondary" parent="FontPrimaryBold">
+    <style name="FontPrimaryBold.TextColor.Secondary" parent="FontSecondaryBold">
         <item name="android:textColor">@color/colorTextSecondary</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:textSize">@dimen/_11ssp</item>

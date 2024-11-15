@@ -132,7 +132,7 @@ object LocalDataHelper {
 
     var haveActiveSession: Boolean
         get() {
-            return getInstance().getBoolean(SESSION_STATE, true)
+            return getInstance().getBoolean(SESSION_STATE, false)
         }
         set(value) {
             return getInstance().putBoolean(SESSION_STATE, value)

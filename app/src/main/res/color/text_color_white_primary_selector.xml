@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/colorTextPrimaryInverse" android:state_selected="true" />
-    <item android:color="@color/colorWhiteAlpha75" android:state_pressed="true" />
+    <item android:color="@color/colorWhite" android:state_selected="true" />
+    <item android:color="#3B324E" android:state_pressed="true" />
     <item android:color="@color/colorWhiteAlpha50" android:state_enabled="false" />
     <item android:color="@color/colorTextPrimary" />
 </selector>

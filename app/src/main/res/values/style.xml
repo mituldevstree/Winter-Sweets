@@ -28,13 +28,11 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textSize">@dimen/_10ssp</item>
-        <item name="android:minHeight">@dimen/_34sdp</item>
+        <item name="android:minHeight">@dimen/_40sdp</item>
         <item name="android:maxLines">1</item>
         <item name="android:lines">1</item>
         <item name="android:background">@drawable/edittext_bg</item>
         <item name="android:drawablePadding">@dimen/_10sdp</item>
-        <item name="android:paddingTop">@dimen/_5sdp</item>
-        <item name="android:paddingBottom">@dimen/_5sdp</item>
         <item name="android:paddingStart">@dimen/_15sdp</item>
         <item name="android:paddingEnd">@dimen/_15sdp</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
@@ -75,19 +73,18 @@
         <item name="android:minHeight">@dimen/_48sdp</item>
         <item name="android:minWidth">@dimen/_130sdp</item>
         <item name="android:textSize">@dimen/_18ssp</item>
-        <item name="android:paddingTop">@dimen/_8sdp</item>
         <item name="android:paddingStart">@dimen/_20sdp</item>
         <item name="android:paddingEnd">@dimen/_20sdp</item>
         <item name="android:textColor">@color/text_color_white_primary_selector</item>
-        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
-        <item name="android:background">@drawable/button_primary</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:background">@drawable/btn_primary_normal</item>
         <item name="backgroundTint">@null</item>
         <item name="android:stateListAnimator">@null</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="Widget.Button.Secondary" parent="Widget.Button.Primary">
-        <item name="android:background">@drawable/button_primary</item>
+        <item name="android:background">@drawable/btn_primary_normal</item>
     </style>
 
     <style name="Widget.Button.Icon" parent="Widget.Button.Primary">
@@ -102,7 +99,7 @@
         <item name="android:thumb">@drawable/ic_switch_thumb_selector</item>
         <item name="android:track">@drawable/ic_switch_track_selector</item>
         <item name="android:showText">false</item>
-        <item name="android:fontFamily">@font/shaun_of_the_dead</item>
+        <item name="android:fontFamily">@font/baloo</item>
         <item name="android:textAllCaps">true</item>
         <item name="showText">false</item>
     </style>

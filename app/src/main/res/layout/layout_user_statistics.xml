@@ -98,7 +98,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvFocusTime"
-                style="@style/FontSecondaryBold.Number"
+                style="@style/FontPrimary.Number"
                 android:layout_width="@dimen/_44sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
@@ -154,7 +154,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvCPM"
-                style="@style/FontSecondaryBold.Number"
+                style="@style/FontPrimary.Number"
                 android:layout_width="@dimen/_44sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"

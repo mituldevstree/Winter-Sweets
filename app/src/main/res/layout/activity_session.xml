@@ -165,7 +165,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txtSpentTime"
-                    style="@style/FontSecondaryBold.Number"
+                    style="@style/FontPrimary.Number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_5sdp"
@@ -198,7 +198,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txtSpeed"
-                    style="@style/FontSecondaryBold.Number"
+                    style="@style/FontPrimary.Number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_speed"
@@ -226,7 +226,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txtPercentage"
-                    style="@style/FontSecondaryBold.Number"
+                    style="@style/FontPrimary.Number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
