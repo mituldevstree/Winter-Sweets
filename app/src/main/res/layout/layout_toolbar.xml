@@ -235,6 +235,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                android:background="@drawable/circle_bg"
                 app:layout_constraintEnd_toStartOf="@+id/btnSettings"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintHorizontal_chainStyle="packed"
