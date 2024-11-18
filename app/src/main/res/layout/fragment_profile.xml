@@ -83,7 +83,7 @@
                     android:layout_height="0dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintGuide_end="@dimen/_85sdp"
+                    app:layout_constraintGuide_end="@dimen/_90sdp"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout

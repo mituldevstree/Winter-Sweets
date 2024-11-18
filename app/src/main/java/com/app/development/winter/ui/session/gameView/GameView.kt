@@ -26,16 +26,17 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
         super.onDraw(canvas)
         // Draw lane separators (pipes)
         canvasPaint.style = Paint.Style.FILL
-//        drawLaneSeparators(canvas)
+        drawLaneSeparators(canvas)
         drawPlayer(canvas)
 
         if (gameState.currentGameStatus == GameStatus.RUNNING) {
             isCanvasDrawing = true
 
-            objectGenerationOffset = (gameState.config.initialGameSpeed + getCurrentGameLevel()).roundToInt()
+            objectGenerationOffset =
+                (gameState.config.initialGameSpeed + getCurrentGameLevel()).roundToInt()
 
             // Generate objects
-            if (myGameObjects.isEmpty()) generateInitialObstacles {
+            if (myGameObjects.size <= 2) generateInitialObstacles {
                 generateCollectibles(it)
             }
 
@@ -57,11 +58,11 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
                             performHapticFeedback(1)
                             myGameObjects.remove(objectsCopy)
                             isExplosionVisible = true
-                            if (gameState.config.isSoundMute.not()){
+                            if (gameState.config.isSoundMute.not()) {
                                 gameSoundPlayer.playExplosionSound()
                             }
 
-                            if (gameState.playerLives<=0){
+                            if (gameState.playerLives <= 0) {
                                 endGame(hasUserQuit = false)
                             }
                         }
@@ -69,10 +70,15 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
                         if (objectsCopy is CoinNew) {
                             gameState.totalScore += 1
                             myGameObjects.remove(objectsCopy)
+                            listener?.onGameStateChange(
+                                gameState.currentGameStatus,
+                                gameState.totalScore,
+                                false
+                            )
                             triggerCoinCollectEffect(
                                 gameState.playerLeft.toInt(), gameState.playerTop.toInt()
                             )
-                            if (gameState.config.isSoundMute.not()){
+                            if (gameState.config.isSoundMute.not()) {
                                 gameSoundPlayer.playCongratulationSound()
                             }
 
@@ -100,7 +106,12 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
         if (BuildConfig.DEBUG) {
             canvas.drawText("$stringScore : ${gameState.totalScore}", 20f, 70f, canvasPaint)
             canvas.drawText("$stringSpeed : ${gameState.currentGameSpeed}", 20f, 100f, canvasPaint)
-            canvas.drawText("$stringAvailableLives : ${gameState.playerLives}", 20f, 130f, canvasPaint)
+            canvas.drawText(
+                "$stringAvailableLives : ${gameState.playerLives}",
+                20f,
+                130f,
+                canvasPaint
+            )
             canvas.drawText("Current Level : ${getCurrentGameLevel()}", 20f, 160f, canvasPaint)
         }
     }
@@ -176,7 +187,3 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
         }
     }
 }
-
-
-
-

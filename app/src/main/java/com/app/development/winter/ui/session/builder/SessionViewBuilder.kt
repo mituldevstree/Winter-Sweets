@@ -94,8 +94,6 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
         if (LocalDataHelper.isOnProduction().not()) {
             mBinding?.lottieHomeAnimation?.hide()
             mBinding?.lottieHomeAnimation?.pauseAnimation()
-            mBinding?.layoutContent?.background =
-                ContextCompat.getDrawable(mContext!!, R.drawable.game_background)
         }
         if (statusBarHeight > 0) {
             mBinding?.guidelineTop?.setGuidelineBegin(statusBarHeight)
@@ -208,23 +206,23 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
     private fun readyToStart() {
         if (LocalDataHelper.isOnProduction()) {
             mBinding?.mainContainer?.isVisible = true
-            mBinding?.gameContainer?.isVisible = false
+            mBinding?.gameViewContainer?.isVisible = false
         } else {
-            mBinding?.gameContainer?.isVisible = true
+            mBinding?.gameViewContainer?.isVisible = true
             mBinding?.mainContainer?.isVisible = false
 
             mGameView = mContext?.let { GameView(it, null) }
             mGameView?.setGameConfig {
                 showOverlayBox = false
                 showLineSeparator = true
-                lineSeparatorStartColor = Color.parseColor("#838D9C")
-                lineSeparatorEndColor = Color.parseColor("#101317")
+                lineSeparatorStartColor = Color.parseColor("#FFFFFF")
+                lineSeparatorEndColor = Color.parseColor("#73FFFFFF")
                 initialPlayerLives = 1
-                coinsNeededForSpeedIncrease = 8
+                coinsNeededForSpeedIncrease = 2
                 enableSmoothMovement = true
                 enableLaneChangeRotation = false
                 isSoundMute = false
-                initialGameSpeed = 10f
+                initialGameSpeed = 20f
                 incrementFactor = 0.15f
             }
             mBinding?.gameView?.addView(mGameView)
@@ -238,6 +236,7 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
         totalScore: Int,
         hasUserQuit: Boolean
     ) {
+        mBinding?.tvScore?.text = totalScore.toString()
         if (currentState == GameStatus.ENDED && LocalDataHelper.isOnProduction().not()) {
             lifecycleScope?.launch {
                 showLoadingView(true)
@@ -282,11 +281,11 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
         view?.hapticFeedbackEnabled()
         when (view) {
             mBinding?.btnMoveBack -> {
-                mGameView?.moveCharacterToRight()
+                mGameView?.moveCharacterToLeft()
             }
 
             mBinding?.btnMoveForward -> {
-                mGameView?.moveCharacterToLeft()
+                mGameView?.moveCharacterToRight()
             }
 
             mBinding?.layoutToolbar?.btnClose -> {
@@ -296,24 +295,6 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
             mBinding?.btnMakeTransparent -> {
                 makeOverlayTransparent()
             }
-
-            mBinding?.btnSessionInfo -> {
-                mBinding?.apply {
-                    val isProfileShow = layoutSessionInfo.isVisible
-                    val animateRotation = 180f
-                    animateRotation(btnSessionInfo, animateRotation)
-                    layoutSessionInfo.isVisible = isProfileShow == false
-                    val param =
-                        constGameSessionDetails.layoutParams as? ConstraintLayout.LayoutParams
-                    if (layoutSessionInfo.isVisible) {
-                        param?.marginStart = mContext?.let { (0).toPx(context = it) } ?: -10
-                    } else {
-                        param?.marginStart = mContext?.let { (-15).toPx(context = it) } ?: -10
-                    }
-                    constGameSessionDetails.layoutParams = param
-                }
-            }
-
         }
     }
 

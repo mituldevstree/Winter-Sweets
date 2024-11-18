@@ -98,23 +98,23 @@
         <item name="walletLibShimmerViewAlpha">0.15</item>
         <item name="walletLibDialogAlpha">0.65</item>
         <item name="walletLibTopBarIconSize">@dimen/topBarIconSize</item>
-        <item name="walletLibContentPaddingTop">-1dp</item>
         <item name="walletLibSupportIconSize">@dimen/_45sdp</item>
         <item name="walletLibGeneralListHorizontalPadding">@dimen/_12sdp</item>
         <item name="walletLibGeneralListItemPadding">@dimen/_4sdp</item>
         <item name="walletLibPaymentProofListHorizontalPadding">@dimen/_20sdp</item>
-        <item name="walletLibPaymentProofPaddingTop">@dimen/_7sdp</item>
-        <item name="walletLibPaymentProofPaddingBottom">@dimen/_10sdp</item>
-        <item name="walletLibContentPaddingBottom">@dimen/_55sdp</item>
+        <item name="walletLibContentPaddingTop">@dimen/_15sdp</item>
+        <item name="walletLibPaymentProofPaddingTop">@dimen/_15sdp</item>
+        <item name="walletLibPaymentProofPaddingBottom">@dimen/_12sdp</item>
+        <item name="walletLibContentPaddingBottom">@dimen/_95sdp</item>
         <item name="walletLibContentPaddingHorizontal">@dimen/_10sdp</item>
 
-        <item name="walletLibSelectorType">DIMMED</item>
+        <item name="walletLibSelectorType">BOUNCE</item>
         <item name="walletLibColorPrimary">@color/colorPrimary</item>
         <item name="walletLibColorTertiary">@color/colorTertiary</item>
         <item name="walletLibTextColorPrimary">@color/colorTextPrimary</item>
         <item name="walletLibTextColorPrimaryInverse">@color/colorTextPrimaryInverse</item>
         <item name="walletLibTextColorSecondary">@color/colorTextPrimary</item>
-        <item name="walletLibTextColorSecondaryInverse">@color/colorTextSecondary</item>
+        <item name="walletLibTextColorSecondaryInverse">@color/colorTertiary</item>
         <item name="walletLibTextColorHint">@color/colorTextHint</item>
         <item name="walletLibTextColorError">@color/colorRed</item>
         <item name="walletLibGeneralDialogBackgroundColor">@color/colorPrimary</item>
@@ -140,8 +140,11 @@
     <style name="Offerwall.Lib.Theme" parent="OfferwallLibTheme">
         <item name="offerWallBackground">@drawable/window_background</item>
         <item name="offerWallHomePageBackground">@null</item>
-        <item name="offerWallVerticalListBackground">@drawable/offer_wall_vertical_list_background</item>
-        <item name="offerWallHorizontalListBackground">@drawable/offer_wall_horizontal_list_background</item>
+        <item name="offerWallVerticalListBackground">@drawable/offer_wall_vertical_list_background
+        </item>
+        <item name="offerWallHorizontalListBackground">
+            @drawable/offer_wall_horizontal_list_background
+        </item>
         <item name="offerWallTaskBackground">@drawable/offer_wall_vertical_list_background</item>
         <item name="offerWallEarningViewBackground">@drawable/lib_earning_background</item>
         <item name="offerWallProviderImageBackground">@drawable/offer_wall_image_background</item>

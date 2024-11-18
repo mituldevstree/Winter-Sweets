@@ -68,7 +68,7 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/_30sdp"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.4"
-                app:layout_constraintWidth_percent="1.20" />
+                app:layout_constraintWidth_percent="0.80" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtErrorMessage"

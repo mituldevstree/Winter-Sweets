@@ -53,7 +53,7 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
 
     protected var myGameObjects = ArrayList<GameObjectsNew>()
     private var characterObjectAsset =
-        ContextCompat.getDrawable(context, R.drawable.ic_player_character_left)
+        ContextCompat.getDrawable(context, R.drawable.ic_player_character)
     private val explosionDrawable by lazy {
         ContextCompat.getDrawable(
             context, R.drawable.explosion
@@ -65,7 +65,9 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
 
     private val collectibleObjectAsset by lazy {
         listOf(
-            getDrawable(R.drawable.ic_coin).toBitmap(),
+            getDrawable(R.drawable.ic_collect_one).toBitmap(),
+            getDrawable(R.drawable.ic_collect_two).toBitmap(),
+            getDrawable(R.drawable.ic_collect_three).toBitmap(),
         )
     }
     private val callableObjectAsset by lazy {
@@ -165,7 +167,7 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
         myGameObjects.add(
             ObstacleNew(
                 lane = firstObjectLane,
-                startY = 0f,
+                startY = -(0..gameState.gameViewHeight).random().toFloat(),
                 isCollusionHappen = false,
                 bitmap = callableObjectAsset.random().scale(reducedWidth, reducedHeight)
             )
@@ -307,7 +309,7 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
             if (currentPlayerFacing != PlayerFacing.FACING_LEFT) {
                 currentPlayerFacing = PlayerFacing.FACING_LEFT
                 characterObjectAsset = ContextCompat.getDrawable(
-                    context, R.drawable.ic_player_character_left
+                    context, R.drawable.ic_player_character
                 )
             }
 
@@ -328,7 +330,7 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
             if (currentPlayerFacing != PlayerFacing.FACING_RIGHT) {
                 currentPlayerFacing = PlayerFacing.FACING_RIGHT
                 characterObjectAsset = ContextCompat.getDrawable(
-                    context, R.drawable.ic_player_character_right
+                    context, R.drawable.ic_player_character
                 )
             }
 

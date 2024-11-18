@@ -2,5 +2,5 @@
 <resources>
     <dimen name="default_thumb_size">20dp</dimen>
     <dimen name="default_track_cross_axis_size">6dp</dimen>
-    <dimen name="topBarIconSize">@dimen/_32sdp</dimen>
+    <dimen name="topBarIconSize">@dimen/_22sdp</dimen>
 </resources>
