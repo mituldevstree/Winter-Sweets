@@ -1,6 +1,9 @@
 package com.app.development.winter.ui.user
 
+import android.view.Gravity
+import androidx.activity.enableEdgeToEdge
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.app.development.winter.R
 import com.app.development.winter.application.Controller.Companion.isAutoClickerInstalled
@@ -10,6 +13,7 @@ import com.app.development.winter.manager.InstallAppCheckManager
 import com.app.development.winter.shared.base.AdvanceBaseViewModel
 import com.app.development.winter.shared.base.activitybase.NavigationBaseActivity
 import com.app.development.winter.shared.extension.forceRestart
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.invisible
 import com.app.development.winter.shared.extension.makeColor
 import com.app.development.winter.shared.extension.showAlertDialog
@@ -41,7 +45,7 @@ class LandingActivity :
     }
 
     override fun initUI() {
-        window.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.home_bg))
+        WindowCompat.setDecorFitsSystemWindows(window,false)
         LocalDataHelper.clearUserPreference()
         InstallAppCheckManager.getAllInstalledPackage { isPackageInstalled ->
             isAutoClickerInstalled = isPackageInstalled

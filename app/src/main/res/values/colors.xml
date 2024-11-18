@@ -9,8 +9,8 @@
     <color name="colorSecondary">#3b324d</color>
     <color name="colorSecondaryVariant">#7b729f</color>
 
-    <color name="colorGraphStart">#4FFFFF</color>
-    <color name="colorGraphEnd">#FFFFFF</color>
+    <color name="colorGraphStart">#FFFFFF</color>
+    <color name="colorGraphEnd">#4FFFFF</color>
     <color name="colorGraphStrokeStart">#FFFFFF</color>
     <color name="colorGraphStrokeEnd">#4FFFFF</color>
 
@@ -27,22 +27,22 @@
     <color name="colorWhiteAlpha15">#26FFFFFF</color>
     <color name="colorWhiteAlpha5">#0DFFFFFF</color>
 
-    <color name="colorEditTextBg">#CC1E2450</color>
+    <color name="colorEditTextBg">#660F1D38</color>
 
     <color name="colorRed">#FF4242</color>
 
     <color name="colorTextHint">#B3FFFFFF</color>
     <color name="colorTextShadow">#606163</color>
     <color name="colorTextPrimary">#FFFFFF</color>
-    <color name="colorTextPrimaryInverse">#4FFFFF</color>
+    <color name="colorTextPrimaryInverse">#FFB5B8</color>
     <color name="colorTextSecondary">#09324B</color>
     <color name="colorTextSecondaryInverse">#FFFFFF</color>
 
     <color name="colorNavigationBar">#01000000</color>
     <color name="colorNavigationBardDark">#141821</color>
     <color name="colorBannerBackground">@color/colorNavigationBardDark</color>
-    <color name="colorStroke">#803C3951</color>
-    <color name="colorStrokeDark">#111217</color>
+    <color name="colorStroke">#6681A3</color>
+    <color name="colorStrokeDark">#170C2A</color>
     <color name="colorRipple">#26000000</color>
 
     <color name="colorDefaultViewColor">#40FFFFFF</color>

@@ -1,6 +1,7 @@
 package com.app.development.winter.ui.settings
 
 import android.annotation.SuppressLint
+import android.view.Gravity
 import android.view.View
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
@@ -19,6 +20,7 @@ import com.app.development.winter.shared.base.activitybase.NavigationBaseActivit
 import com.app.development.winter.shared.base.viewbase.AdvancedBaseFragment
 import com.app.development.winter.shared.callback.IItemViewListener
 import com.app.development.winter.shared.extension.forceRestart
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.hapticFeedbackEnabled
 import com.app.development.winter.shared.extension.showAlertDialog
 import com.app.development.winter.shared.network.ApiEndpoints
@@ -36,8 +38,6 @@ class SettingFragment :
         FragmentSettingsBinding::inflate, UserViewModel::class.java
     ), IItemViewListener {
 
-    private var isSpecializedReward: Boolean? = null
-
     override fun getToolBarBinding(): LayoutToolbarBinding? {
         return mBinding?.layoutToolbar
     }
@@ -47,6 +47,7 @@ class SettingFragment :
     }
 
     override fun initDATA() {
+        mBinding?.layoutToolbar?.toolbar?.handleVisualOverlaps(true, Gravity.TOP)
         setSettingAdapter(StaticData.getSettings(requireContext()))
         observeFragmentResult()
     }

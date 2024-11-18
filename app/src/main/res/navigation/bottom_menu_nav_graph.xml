@@ -101,10 +101,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navLeaderboard"
-        android:name="com.app.development.winter.ui.leaderboard.LeaderboardFragment"
-        android:label="@string/leaderboard"
-        tools:layout="@layout/fragment_leader_board">
+        android:id="@+id/navSetting"
+        android:name="com.app.development.winter.ui.settings.SettingFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
         <argument
             android:name="showBottomBar"
             android:defaultValue="true" />

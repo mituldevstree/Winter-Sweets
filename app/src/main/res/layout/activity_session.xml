@@ -58,8 +58,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_loop="true"
-            tools:src="@drawable/app_logo" />
+            app:lottie_loop="true" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mainContainer"
@@ -68,7 +67,7 @@
             android:animateLayoutChanges="true"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
-            app:layout_constraintTop_toBottomOf="@id/layoutToolbar"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop"
             tools:visibility="visible">
 
             <androidx.constraintlayout.widget.Guideline
@@ -89,17 +88,28 @@
                 app:layout_constraintGuide_end="@dimen/_15sdp"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/level_earning_bg"
+                app:layout_constraintBottom_toBottomOf="@id/txtEarningInUsd"
+                app:layout_constraintEnd_toEndOf="@id/txtLevel"
+                app:layout_constraintStart_toStartOf="@id/txtLevel"
+                app:layout_constraintTop_toTopOf="@id/txtLevel" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtLevel"
                 style="@style/FontSecondaryBold.TextColor.Primary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_35sdp"
                 android:gravity="center"
+                android:paddingHorizontal="@dimen/_25sdp"
+                android:paddingTop="@dimen/_20sdp"
                 android:setValue="@{@string/level +` `+ sessionData.currentLevel+``}"
                 android:textAppearance="@style/TextViewShadow"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="@dimen/_28ssp"
+                android:textSize="@dimen/_25ssp"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toEndOf="@+id/guidelineStart"
                 app:layout_constraintTop_toTopOf="parent"
@@ -111,176 +121,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingBottom="@dimen/_10sdp"
                 android:setValue="@{sessionData.currentEarningsData.getBalanceWithCurrency}"
                 android:text="$0.0000"
                 android:textAppearance="@style/TextViewShadow"
-                android:textSize="@dimen/_16ssp"
+                android:textSize="@dimen/_14ssp"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toEndOf="@+id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@+id/txtLevel" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constGameSessionDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:animateLayoutChanges="true"
-                android:background="@drawable/ic_game_slider"
-                android:paddingVertical="@dimen/_10sdp"
-                android:paddingStart="@dimen/_5sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHeight_percent="0.40"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.Group
-                    android:id="@+id/layoutSessionInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    app:constraint_referenced_ids="txtSpentTime,txtSpeed,txtPercentage,dot1,dot2,dot3,lblNextLevel" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/btnSessionInfo"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:onClick="@{(v)->clickListener.onClick(v)}"
-                    android:padding="@dimen/_5sdp"
-                    app:layout_constraintBottom_toTopOf="@id/dot1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_next" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/dot1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@id/txtSpentTime"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btnSessionInfo"
-                    app:srcCompat="@drawable/ic_separator_dot" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txtSpentTime"
-                    style="@style/FontPrimary.Number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_5sdp"
-                    android:drawableTop="@drawable/ic_timer"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:maxEms="8"
-                    android:maxLength="8"
-                    android:maxLines="1"
-                    android:minWidth="@dimen/_32sdp"
-                    android:setValue="@{ViewUtil.convertToHHMMSS(sessionData.totalSpentSessionTime * 1000)}"
-                    android:textColor="@color/colorTextPrimaryInverse"
-                    android:textSize="@dimen/_8ssp"
-                    app:layout_constraintBottom_toTopOf="@id/dot2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dot1"
-                    tools:text="00:00:00" />
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/dot2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@id/txtSpeed"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtSpentTime"
-                    app:srcCompat="@drawable/ic_separator_dot" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txtSpeed"
-                    style="@style/FontPrimary.Number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/ic_speed"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:setValue="@{sessionData.CurrentEarningsData.getGcmSpeed()}"
-                    android:textColor="@color/colorTextPrimaryInverse"
-                    android:textSize="@dimen/_8ssp"
-                    app:layout_constraintBottom_toTopOf="@id/dot3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dot2"
-                    tools:text="00 GCM " />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/dot3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@id/txtPercentage"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtSpeed"
-                    app:srcCompat="@drawable/ic_separator_dot" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txtPercentage"
-                    style="@style/FontPrimary.Number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:drawableTop="@drawable/ic_percentage"
-                    android:drawablePadding="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:setValue="@{sessionData.leftPercentage}"
-                    android:textColor="@color/colorTextPrimaryInverse"
-                    android:textSize="@dimen/_8ssp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dot3"
-                    tools:text="50%" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/lblNextLevel"
-                    style="@style/FontPrimaryMedium.TextColor.Primary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:gravity="center"
-                    android:maxWidth="@dimen/_38sdp"
-                    android:text="@string/next_level"
-                    android:textSize="@dimen/_6ssp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txtPercentage" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtLevelInstruction"
-                style="@style/FontSecondaryBold.TextColor.Primary"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:gravity="center"
-                android:setTextBoldForeground="@{sessionData.currentEarningsData.earningPercentForACoin+``}"
-                android:textSize="@dimen/_11ssp"
-                app:layout_constraintBottom_toTopOf="@+id/stageStepBar"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                app:layout_constraintStart_toEndOf="@+id/guidelineStart"
-                app:layout_constraintWidth_percent="0.75"
-                tools:text="@string/progress_text_earning_mode" />
 
             <com.app.development.winter.shared.views.stepprogress.StageStepBar
                 android:id="@+id/stageStepBar"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_11sdp"
-                android:layout_marginBottom="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/line_progress_background"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/clockBg"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toEndOf="@+id/guidelineStart"
                 app:layout_constraintWidth_percent="0.75"
@@ -291,12 +147,136 @@
                 app:ssb_filledThumbDrawable="@drawable/ic_session_progress_thumb"
                 app:ssb_filledTrackDrawable="@drawable/filled_track_progress"
                 app:ssb_orientation="horizontal"
-                app:ssb_showThumbs="true"
+                app:ssb_showThumbs="false"
                 app:ssb_stageStepConfig="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
                 app:ssb_thumbSize="@dimen/_8sdp"
                 app:ssb_unfilledThumbDrawable="@drawable/ic_session_progress_thumb"
                 app:ssb_unfilledTrackColor="#00FECD35" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/clockBg"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:src="@drawable/rounded_primary_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="@id/earningBg"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@id/earningBg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@id/txtSpentTime"
+                app:layout_constraintEnd_toEndOf="@id/clockBg"
+                app:layout_constraintStart_toStartOf="@id/clockBg"
+                app:layout_constraintTop_toTopOf="@id/clockBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtSpentTime"
+                style="@style/FontPrimary.Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxEms="8"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:setValue="@{ViewUtil.convertToHHMMSS(sessionData.totalSpentSessionTime * 1000)}"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="@id/clockBg"
+                app:layout_constraintEnd_toEndOf="@id/clockBg"
+                app:layout_constraintStart_toStartOf="@id/clockBg"
+                app:layout_constraintTop_toBottomOf="@id/ivClock"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="00:00:00" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/earningBg"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:src="@drawable/rounded_primary_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPercentage"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:setValue="@{sessionData.currentEarningsData.earningPercentForACoin+`% `}"
+                android:textAppearance="@style/TextViewShadow"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintBottom_toTopOf="@id/tvAwayCoins"
+                app:layout_constraintEnd_toEndOf="@id/earningBg"
+                app:layout_constraintStart_toStartOf="@id/earningBg"
+                app:layout_constraintTop_toTopOf="@id/earningBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="100%" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAwayCoins"
+                style="@style/FontSecondaryBold.TextColor.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/_minus4sdp"
+                android:shadowColor="@android:color/transparent"
+                android:text="@string/away_n_from_1_n_coin"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="@id/earningBg"
+                app:layout_constraintEnd_toEndOf="@id/earningBg"
+                app:layout_constraintStart_toStartOf="@id/earningBg"
+                app:layout_constraintTop_toBottomOf="@id/tvPercentage"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:textAllCaps="false" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/speedBg"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:src="@drawable/rounded_primary_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="@id/earningBg"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@id/earningBg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/txtSpeed"
+                app:layout_constraintEnd_toEndOf="@id/speedBg"
+                app:layout_constraintStart_toStartOf="@id/speedBg"
+                app:layout_constraintTop_toTopOf="@id/speedBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/ic_speed" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtSpeed"
+                style="@style/FontPrimary.Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxWidth="@dimen/_68sdp"
+                android:maxLines="1"
+                android:setValue="@{sessionData.CurrentEarningsData.getGcmSpeed()}"
+                app:autoSizeMaxTextSize="@dimen/_8ssp"
+                app:autoSizeMinTextSize="@dimen/_6ssp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="@+id/speedBg"
+                app:layout_constraintEnd_toEndOf="@id/speedBg"
+                app:layout_constraintStart_toStartOf="@id/speedBg"
+                app:layout_constraintTop_toBottomOf="@id/ivSpeed"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="1700000GC/h" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
@@ -308,11 +288,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
-        <FrameLayout
+        <com.app.development.winter.ui.session.gameView.GameView
             android:id="@+id/gameView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:rotation="180"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -321,34 +300,95 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnMoveBack"
-            android:layout_width="@dimen/_45sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginStart="@dimen/_35sdp"
             android:onClick="@{(v)->clickListener.onClick(v)}"
             android:setImageSelector="@{true}"
             android:src="@drawable/ic_game_previous"
-            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/tvTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvScore" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/lblScore"
+            style="@style/FontPrimaryBold.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/score"
+            android:textAppearance="@style/TextViewShadow"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toTopOf="@id/tvScore"
+            app:layout_constraintEnd_toEndOf="@+id/btnMoveForward"
+            app:layout_constraintStart_toStartOf="@+id/btnMoveBack"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvScore"
+            style="@style/FontSecondaryBold.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextViewShadow"
+            android:textColor="@color/colorTextPrimaryInverse"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toTopOf="@id/lblTime"
+            app:layout_constraintEnd_toEndOf="@+id/btnMoveForward"
+            app:layout_constraintStart_toStartOf="@+id/btnMoveBack"
+            tools:text="000" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/lblTime"
+            style="@style/FontPrimaryBold.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/time"
+            android:textAppearance="@style/TextViewShadow"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toTopOf="@id/tvTime"
+            app:layout_constraintEnd_toEndOf="@+id/btnMoveForward"
+            app:layout_constraintStart_toStartOf="@+id/btnMoveBack"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTime"
+            style="@style/FontSecondaryBold.TextColor.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:gravity="center"
+            android:setValue="@{ViewUtil.convertToHHMMSS(sessionData.totalSpentSessionTime * 1000)}"
+            android:textAppearance="@style/TextViewShadow"
+            android:textColor="@color/colorTextPrimaryInverse"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="@+id/btnMoveForward"
+            app:layout_constraintStart_toStartOf="@+id/btnMoveBack"
+            tools:text="00:00:00" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnMoveForward"
-            android:layout_width="@dimen/_45sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
             android:onClick="@{(v)->clickListener.onClick(v)}"
             android:setImageSelector="@{true}"
             android:src="@drawable/ic_game_next"
-            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/tvTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvScore" />
 
         <androidx.constraintlayout.widget.Group
-            android:id="@+id/gameContainer"
+            android:id="@+id/gameViewContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="btnMoveBack,btnMoveForward,gameView" />
+            app:constraint_referenced_ids="btnMoveBack,btnMoveForward,gameView,tvScore,lblScore,tvTime,lblTime"
+            tools:visibility="gone" />
 
         <include
             android:id="@+id/layoutToolbar"

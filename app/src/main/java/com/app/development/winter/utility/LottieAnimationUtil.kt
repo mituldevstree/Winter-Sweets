@@ -54,4 +54,19 @@ object LottieAnimationUtil {
             animView.cancelAnimation()
         }
     }
+    @JvmStatic
+    @BindingAdapter(value = ["android:setSplashAnimation"], requireAll = false)
+    fun setSplashAnimation(animView: LottieAnimationView, autoPlayLottie: Boolean) {
+        animView.imageAssetsFolder = "splashpage"
+        animView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
+        animView.enableMergePathsForKitKatAndAbove(true)
+        animView.renderMode = RenderMode.HARDWARE
+        animView.setAnimation(R.raw.lottie_splash_page)
+        if (autoPlayLottie) {
+            animView.playAnimation()
+        } else {
+            animView.progress = 0f
+            animView.cancelAnimation()
+        }
+    }
 }

@@ -1,6 +1,10 @@
 package com.app.development.winter.ui.home
 
+import android.view.Gravity
+import android.view.Window
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -12,6 +16,7 @@ import com.app.development.winter.databinding.LayoutToolbarBinding
 import com.app.development.winter.localcache.LocalDataHelper
 import com.app.development.winter.shared.base.AdvanceBaseViewModel
 import com.app.development.winter.shared.base.activitybase.CyclicAdsBaseActivity
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.network.ApiEndpoints
 import com.app.development.winter.ui.session.service.AdvanceBaseFloatingViewService
 import com.app.development.winter.ui.user.event.UserEvents
@@ -32,6 +37,8 @@ class HomeActivity :
     }
 
     override fun initDATA() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        mBinding?.root?.handleVisualOverlaps(true,Gravity.BOTTOM)
         Thread.setDefaultUncaughtExceptionHandler(FaceTecUncaughtException(this))
         if (AdvanceBaseFloatingViewService.isServiceRunning.not()) {
             ReferralLibManager.setReferralUser(LocalDataHelper.getUserDetail()?.id,
@@ -72,7 +79,7 @@ class HomeActivity :
                 R.id.navWithdraw,
                 R.id.navOffers,
                 R.id.navReferral,
-                R.id.navLeaderboard
+                R.id.navSetting
             )
         )
         mBinding?.bottomMenu?.setOnApplyWindowInsetsListener(null)
@@ -84,7 +91,7 @@ class HomeActivity :
             NavigationUI.onNavDestinationSelected(item, navController)
             return@setOnItemSelectedListener true
         }
-
+        mBinding?.bottomMenu?.itemIconTintList = null
         mBinding?.ivHome?.setOnClickListener {
             onTabChangeRequest(R.id.navHome)
         }

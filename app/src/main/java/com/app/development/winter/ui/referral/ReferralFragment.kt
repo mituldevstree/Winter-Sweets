@@ -2,6 +2,7 @@ package com.app.development.winter.ui.referral
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import com.app.development.winter.databinding.FragmentReferralBinding
 import com.app.development.winter.databinding.LayoutToolbarBinding
 import com.app.development.winter.localcache.LocalDataHelper
 import com.app.development.winter.shared.base.viewbase.BaseFragment
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.isFragmentAdded
 import com.app.development.winter.shared.extension.lifecycleOwner
 import com.app.development.winter.shared.extension.show
@@ -36,12 +38,7 @@ class ReferralFragment : BaseFragment<FragmentReferralBinding>(FragmentReferralB
     }
 
     override fun initDATA() {
-        activity?.window?.setBackgroundDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.window_background
-            )
-        )
+        mBinding?.root?.handleVisualOverlaps(true, Gravity.TOP)
         referralFragmentInstance?.let { it1 -> loadFragment(it1) }
     }
 

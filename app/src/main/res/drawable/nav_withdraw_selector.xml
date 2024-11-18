@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="@android:color/transparent" />
+    </item>
+    <item android:bottom="@dimen/_40sdp">
+        <selector>
+            <item
+                android:drawable="@drawable/ic_nav_withdraw_selected"
+                android:state_checked="true" />
+            <item android:drawable="@drawable/ic_nav_withdraw_default" />
+        </selector>
+    </item>
+</layer-list>

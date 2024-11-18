@@ -1,5 +1,6 @@
 package com.app.development.winter.ui.home
 
+import android.view.Gravity
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -10,6 +11,7 @@ import com.app.development.winter.databinding.LayoutToolbarBinding
 import com.app.development.winter.localcache.LocalDataHelper
 import com.app.development.winter.shared.base.activitybase.MonetizationBaseActivity
 import com.app.development.winter.shared.base.viewbase.AdvancedBaseFragment
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.hapticFeedbackEnabled
 import com.app.development.winter.shared.extension.invisible
 import com.app.development.winter.ui.session.event.SessionEvent
@@ -35,12 +37,7 @@ class HomeFragment :
     }
 
     override fun initUI() {
-        activity?.window?.setBackgroundDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.home_bg
-            )
-        )
+        mBinding?.layoutToolbar?.toolbar?.handleVisualOverlaps(true, Gravity.TOP)
         getToolBarBinding()?.showDownloadFeature = mTooBarBase?.shouldShowDownloadFeature
         getToolBarBinding()?.showAdDebuggerOption = mTooBarBase?.shouldShowDebuggerOption
         mBinding?.clickListener = this
@@ -96,6 +93,16 @@ class HomeFragment :
         view?.hapticFeedbackEnabled()
         when (view) {
             mBinding?.btnPlay -> {
+                mBinding?.lottieHomeAnimation?.pauseAnimation()
+                lifecycleScope.launch {
+                    if (isServiceRunning) {
+                        Controller.floatingViewState.emit(
+                            FloatingViewServiceState(
+                                floatingViewState = FloatingViewState.STOP_STATS_VIEW, null
+                            )
+                        )
+                    }
+                }
                 startSession()
             }
         }
@@ -104,26 +111,19 @@ class HomeFragment :
 
     private fun startSession() {
         lifecycleScope.launch {
-            mBinding?.lottieHomeAnimation?.pauseAnimation()
-            delay(50)
+            delay(500)
             if (!LocalDataHelper.isOnProduction()) {
-                if (isServiceRunning) {
-                    Controller.floatingViewState.emit(
-                        FloatingViewServiceState(
-                            floatingViewState = FloatingViewState.STOP_STATS_VIEW
-                        )
-                    )
-                }
+                mBinding?.progressView?.show()
                 delay(50)
-                showProgressBar(true)
                 triggerGeneralAds(
                     adRequestType = MonetizationBaseActivity.AdRequestType.TRIGGER_START_SESSION,
                     type = AdType.Native
                 )
             } else {
+                mBinding?.lottieHomeAnimation?.pauseAnimation()
+                delay(50)
                 mCyclicAdsBase?.requestOverlayPermission { isGranted ->
                     if (isGranted) {
-                        showProgressBar(true)
                         triggerGeneralAds(
                             adRequestType = MonetizationBaseActivity.AdRequestType.TRIGGER_START_SESSION,
                             type = AdType.Native
@@ -165,10 +165,11 @@ class HomeFragment :
     }
 
     private fun triggerSession(adRequestType: MonetizationBaseActivity.AdRequestType? = null) {
-        showProgressBar(false)
+        mBinding?.progressView?.hide()
         if (adRequestType == MonetizationBaseActivity.AdRequestType.TRIGGER_START_SESSION) {
             mMonetizationBase?.updateAdsRequestType(MonetizationBaseActivity.AdRequestType.TRIGGER_GENERAL)
             lifecycleScope.launch {
+                mBinding?.progressView?.hide()
                 mCyclicAdsBase?.checkAndStartSession()
             }
         }
@@ -180,18 +181,5 @@ class HomeFragment :
 
     override fun onShowAdDebuggerOption() {
         getToolBarBinding()?.showAdDebuggerOption = mTooBarBase?.shouldShowDebuggerOption
-    }
-
-    private fun showProgressBar(hasShow: Boolean) {
-        if (hasShow) {
-            mBinding?.progressView?.show()
-        } else {
-            mBinding?.progressView?.invisible()
-        }
-        setButtonDisabled(isEnabled = !hasShow)
-    }
-
-    private fun setButtonDisabled(isEnabled: Boolean) {
-        mBinding?.btnPlay?.isEnabled = isEnabled
     }
 }

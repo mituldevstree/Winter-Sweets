@@ -3,6 +3,7 @@ package com.app.development.winter.ui.withdraw
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -13,6 +14,7 @@ import com.app.development.winter.databinding.LayoutToolbarBinding
 import com.app.development.winter.localcache.LocalDataHelper
 import com.app.development.winter.manager.WalletLibManager
 import com.app.development.winter.shared.base.viewbase.BaseFragment
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.hide
 import com.app.development.winter.shared.extension.isFragmentAdded
 import com.app.development.winter.shared.extension.lifecycleOwner
@@ -38,12 +40,7 @@ class WithdrawFragment :
     }
 
     override fun initUI() {
-        activity?.window?.setBackgroundDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.window_background
-            )
-        )
+        mBinding?.root?.handleVisualOverlaps(true, Gravity.TOP)
         mBinding?.layoutError?.root?.hide()
         WalletLibManager.getWithdrawFragment()?.let { it1 -> loadFragment(it1) }
     }

@@ -1,5 +1,6 @@
 package com.app.development.winter.ui.profile
 
+import android.view.Gravity
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.formatter.ValueFormatter
@@ -10,6 +11,7 @@ import com.app.development.winter.localcache.LocalDataHelper
 import com.app.development.winter.shared.base.AdvanceBaseViewModel
 import com.app.development.winter.shared.base.viewbase.AdvancedBaseFragment
 import com.app.development.winter.shared.callback.IItemViewListener
+import com.app.development.winter.shared.extension.handleVisualOverlaps
 import com.app.development.winter.shared.extension.hide
 import com.app.development.winter.shared.extension.invisible
 import com.app.development.winter.shared.extension.setBarChartProperties
@@ -37,12 +39,7 @@ class ProfileFragment :
     }
 
     override fun initDATA() {
-        activity?.window?.setBackgroundDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.window_background
-            )
-        )
+        mBinding?.layoutToolbar?.toolbar?.handleVisualOverlaps(true, Gravity.TOP)
         mViewModel.getProfileState().handleEvent(
             ProfileEvent.RequestGetEarnings(
                 type = ProfileEarningState.Companion.EarningFilterType.DAILY

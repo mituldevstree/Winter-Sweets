@@ -9,8 +9,6 @@
 
     <style name="FontSecondaryBold">
         <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:lineSpacingMultiplier">0.825</item>
-        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="FontPrimaryMedium">

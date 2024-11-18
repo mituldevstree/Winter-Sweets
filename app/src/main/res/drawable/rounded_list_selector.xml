@@ -36,8 +36,8 @@
                             <corners android:radius="@dimen/_25ssp" />
                             <gradient
                                 android:angle="90"
-                                android:endColor="@color/colorStrokeDark"
-                                android:startColor="@color/colorStroke" />
+                                android:endColor="@color/colorPrimaryVariant"
+                                android:startColor="@color/colorPrimaryDarker" />
                         </shape>
                     </item>
                     <item
