@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">Sie können die Statistiken des Benutzers sehen</string>
     <string name="total_earning">Gesamteinnahmen</string>
     <string name="leaderboard_message">Hier können Sie die Top-20-Benutzer basierend auf der aufgewendeten Zeit sehen</string>
-    <string name="overlay_message">Dein Haustier wächst prächtig! Diese Belohnung markiert einen weiteren aufregenden Moment in eurer gemeinsamen Reise!</string>
+    <string name="overlay_message">Erwachsenwerden ist schwer, Liebling. Ansonsten würde es jeder tun.</string>
     <string name="time">Zeit</string>
     <string name="progress_text_earning_mode">Du bist %1$s%% davon entfernt, 1 Münze zu verdienen</string>
     <string name="ending_session">Sitzung beenden?</string>
@@ -141,5 +141,8 @@
     <string name="start">Start</string>
     <string name="next_level">Nächstes Level</string>
     <string name="offer_app_name">Angebotswand</string>
+    <string name="splash_tag_line">SPIELE \n ENTWICKLE DICH UND SAMMLE BELohnungen</string>
+    <string name="score">Punktzahl</string>
+    <string name="away_n_from_1_n_coin">Noch\n 1 Münze\n entfernt</string>
 
 </resources>

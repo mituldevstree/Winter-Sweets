@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">आप उपयोगकर्ता की सांख्यिकी देख सकते हैं</string>
     <string name="total_earning">कुल कमाई</string>
     <string name="leaderboard_message">आप यहां बिताए गए समय के आधार पर शीर्ष 20 उपयोगकर्ताओं को देख सकते हैं</string>
-    <string name="overlay_message">आपका पालतू जानवर बहुत खूबसूरती से बढ़ रहा है! और यह इनाम आपकी यात्रा में एक और रोमांचक क्षण को चिह्नित करता है!</string>
+    <string name="overlay_message">बड़े होना कठिन है, प्यार। अन्यथा, हर कोई ऐसा करेगा।</string>
     <string name="time">समय</string>
     <string name="progress_text_earning_mode">आप 1 सिक्का प्राप्त करने से %1$s%% दूर हैं</string>
     <string name="ending_session">सत्र समाप्त हो रहा है?</string>
@@ -141,5 +141,8 @@
     <string name="start">प्रारंभ</string>
     <string name="next_level">अगला स्तर</string>
     <string name="offer_app_name">ऑफ़रवॉल</string>
+    <string name="splash_tag_line">खेलें \\n विकसित हों और पुरस्कार इकट्ठा करें</string>
+    <string name="score">स्कोर</string>
+    <string name="away_n_from_1_n_coin">1\n सिक्का से\n दूर</string>
 
 </resources>

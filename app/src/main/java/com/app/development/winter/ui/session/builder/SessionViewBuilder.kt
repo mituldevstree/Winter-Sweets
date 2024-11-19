@@ -214,7 +214,7 @@ open class SessionViewBuilder : View.OnClickListener, GameListener {
             mGameView = mContext?.let { GameView(it, null) }
             mGameView?.setGameConfig {
                 showOverlayBox = false
-                showLineSeparator = true
+                showLineSeparator = false
                 lineSeparatorStartColor = Color.parseColor("#FFFFFF")
                 lineSeparatorEndColor = Color.parseColor("#73FFFFFF")
                 initialPlayerLives = 1

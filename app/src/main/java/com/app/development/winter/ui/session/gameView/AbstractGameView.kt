@@ -26,17 +26,21 @@ import com.app.development.winter.shared.extension.getDrawable
 import com.app.development.winter.shared.extension.toJson
 import com.app.development.winter.ui.session.gameView.gameUtils.CoinCollectEffect
 import com.app.development.winter.ui.session.gameView.gameUtils.GameSoundEffectPlayer
+import com.app.development.winter.ui.session.gameView.gameobjects.COLLECTIBLE_FACTOR
 import com.app.development.winter.ui.session.gameView.gameobjects.CoinNew
 import com.app.development.winter.ui.session.gameView.gameobjects.GameConfig
 import com.app.development.winter.ui.session.gameView.gameobjects.GameObjectsNew
 import com.app.development.winter.ui.session.gameView.gameobjects.GameStatus
 import com.app.development.winter.ui.session.gameView.gameobjects.GameStateNew
+import com.app.development.winter.ui.session.gameView.gameobjects.OBSTACLE_FACTOR
 import com.app.development.winter.ui.session.gameView.gameobjects.ObstacleNew
 import com.app.development.winter.ui.session.gameView.gameobjects.PlayerFacing
+import com.app.development.winter.ui.session.gameView.gameobjects.Position
 import com.app.development.winter.ui.session.gameView.gameobjects.TOP_FALLING_PADDING
 import kotlinx.coroutines.Job
 import java.util.LinkedList
 import kotlin.math.abs
+import kotlin.math.roundToInt
 
 abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
@@ -139,15 +143,16 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
         } else {
             val lane = lanes.random()
             lanes.remove(lane)
-            val reduceFactor = 0.6f
+            val reduceFactor = COLLECTIBLE_FACTOR
             val reducedWidth = (gameState.playerWidth * reduceFactor).toInt()
             val reducedHeight = (gameState.playerHeight * reduceFactor).toInt()
+            val coinNew = CoinNew(
+                lane = lane, rotation = 0f,
+                startY = -(0..gameState.gameViewHeight).random().toFloat(),
+                bitmap = collectibleObjectAsset.random().scale(reducedWidth, reducedHeight),
+            )
             myGameObjects.add(
-                CoinNew(
-                    lane = lane,
-                    startY = gameState.currentGameSpeed,
-                    bitmap = collectibleObjectAsset.random().scale(reducedWidth, reducedHeight),
-                )
+                coinNew
             )
         }
 
@@ -161,54 +166,33 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
         val firstObjectLane = (seedRange).random()
         Log.e("Iterator", "Seed${seedRange.toJson()}")
         seedRange.remove(firstObjectLane)
-        val reduceFactor = 0.8f // Reduce to 50%
+        val reduceFactor = OBSTACLE_FACTOR // Reduce to 50%
         val reducedWidth = (gameState.playerWidth * reduceFactor).toInt()
         val reducedHeight = (gameState.playerHeight * reduceFactor).toInt()
-        myGameObjects.add(
-            ObstacleNew(
-                lane = firstObjectLane,
-                startY = -(0..gameState.gameViewHeight).random().toFloat(),
-                isCollusionHappen = false,
-                bitmap = callableObjectAsset.random().scale(reducedWidth, reducedHeight)
-            )
+        val obstacleNew = ObstacleNew(
+            lane = firstObjectLane,
+            startY = -(0..gameState.gameViewHeight).random().toFloat(),
+            isCollusionHappen = false,
+            rotation = 0f,
+            bitmap = callableObjectAsset.random().scale(reducedWidth, reducedHeight)
         )
-        //  }
+        myGameObjects.add(obstacleNew)
         callback.invoke(seedRange)
-
     }
-
     protected fun drawPlayer(canvas: Canvas) {
-
-        val playerWidth = (gameState.playerWidth)
-        val aspectRatio = (characterObjectAsset?.intrinsicHeight
-            ?: 1).toFloat() / (characterObjectAsset?.intrinsicWidth ?: 1)
-
-        val playerHeight = (playerWidth * aspectRatio).toInt()
-
-        if (gameState.playerHeight != playerHeight) {
-            gameState.playerHeight = playerHeight
-        }
-
-        canvas.save()
-        canvas.translate(gameState.playerLeft, gameState.playerTop)
-
-        if (gameState.config.enableLaneChangeRotation) {
-            canvas.rotate(
-                gameState.currentPlayerRotation,
-                (playerWidth / 2).toFloat(),
-                (playerHeight / 2).toFloat()
-            )
-        }
+        val playerWidth = (gameState.playerWidth) // Desired width
+        val playerHeight =
+            (characterObjectAsset?.intrinsicHeight
+                ?: 1) * playerWidth / (characterObjectAsset?.intrinsicWidth
+                ?: 1) * 1 // Maintain aspect ratio
 
         characterObjectAsset?.setBounds(
-            0,
-            0,
-            playerWidth,
-            playerHeight - characterGrowingFactor.toInt()
+            gameState.playerLeft,
+            (gameState.playerTop - playerHeight - characterGrowingFactor.roundToInt()),
+            gameState.playerLeft + playerWidth,
+            gameState.playerTop
         )
         characterObjectAsset?.draw(canvas)
-        canvas.restore()
-
         manageCharacterGrowing()
     }
 
@@ -229,6 +213,7 @@ abstract class AbstractGameView(context: Context, attrs: AttributeSet?) : View(c
             }
         }
     }
+
 
     protected fun explosionEffect(canvas: Canvas) {
         if (isExplosionVisible.not()) return

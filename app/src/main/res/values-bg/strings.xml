@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">Можете да видите статистиката на потребителя</string>
     <string name="total_earning">Общо спечелено</string>
     <string name="leaderboard_message">Тук можете да видите топ 20 потребители въз основа на прекарано време</string>
-    <string name="overlay_message">Вашият домашен любимец расте прекрасно! Тази награда отбелязва още един вълнуващ момент във вашето пътешествие заедно!</string>
+    <string name="overlay_message">Порастването е трудно, скъпи. Иначе всички биха го направили.</string>
     <string name="time">Време</string>
     <string name="progress_text_earning_mode">Остават %1$s%% до спечелването на 1 монета</string>
     <string name="ending_session">Приключване на сесията?</string>
@@ -141,5 +141,8 @@
     <string name="start">Старт</string>
     <string name="next_level">Следващо ниво</string>
     <string name="offer_app_name">Оферта стена</string>
+    <string name="splash_tag_line">ИГРАЙ \\n ЕВОЛЮИРАЙ И СЪБИРАЙ НАГРАДИ</string>
+    <string name="score">Резултат</string>
+    <string name="away_n_from_1_n_coin">На\n отстояние от 1\n монета</string>
 
 </resources>

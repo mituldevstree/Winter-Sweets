@@ -16,6 +16,8 @@ import com.app.development.winter.ui.session.builder.UserStatisticsViewBuilder
 import com.app.development.winter.ui.session.event.SessionEvent
 import com.app.development.winter.ui.session.state.SessionUiState
 import com.app.development.winter.ui.session.viewmodel.SessionConfigViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class UserStatisticsOverlayService :
     AdvanceBaseFloatingViewService<LayoutUserStatisticsBinding, SessionEvent, SessionUiState, SessionConfigViewModel>(
@@ -34,8 +36,17 @@ class UserStatisticsOverlayService :
     }
 
     override fun initUI() {
-        mViewModel.getSessionUiState().handleEvent(SessionEvent.RequestUserStatistics)
+        getUpdatedData()
+
         setFloatingTouchListener()
+    }
+
+    private fun getUpdatedData() {
+        mViewModel.getSessionUiState().handleEvent(SessionEvent.RequestUserStatistics)
+        lifecycleScope.launch {
+            delay(4000)
+            getUpdatedData()
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")

@@ -130,7 +130,7 @@
     <string name="leaderboard_has_currently_no_standings">No users are currently standing in leaderboard.</string>
     <string name="leaderboard_data_not_available">Leaderboard data is not available at this time. Thank you for your patience!</string>
     <string name="leaderboard_message">You can see here top 20 users based on spent time</string>
-    <string name="overlay_message">Your pet is growing beautifully! and this reward marks another exciting moment in your journey together!</string>
+    <string name="overlay_message">Growing up is hard, love. Otherwise, everyone would do it.</string>
     <string name="time">Time</string>
     <string name="progress_text_earning_mode">You are %1$s%% away from gaining 1 coin</string>
     <string name="ending_session">Ending Session?</string>
@@ -148,4 +148,7 @@
     <string name="splash_tag_line">PLAY \n EVOLVE AND COLLECT REWARDS</string>
     <string name="score">Score</string>
     <string name="away_n_from_1_n_coin">Away \nfrom 1 coin</string>
+    <string name="referrals">Referrals</string>
+    <string name="credits">Credits</string>
+    <string name="active_users">Active Users</string>
 </resources>

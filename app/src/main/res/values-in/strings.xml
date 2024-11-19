@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">Anda dapat melihat statistik pengguna</string>
     <string name="total_earning">Pendapatan Total</string>
     <string name="leaderboard_message">Anda dapat melihat di sini 20 pengguna teratas berdasarkan waktu yang dihabiskan</string>
-    <string name="overlay_message">Hewan peliharaan Anda tumbuh dengan indah! dan hadiah ini menandai momen menggembirakan lainnya dalam perjalanan Anda bersama!</string>
+    <string name="overlay_message">Tumbuh dewasa itu sulit, sayang. Kalau tidak, semua orang akan melakukannya.</string>
     <string name="time">Waktu</string>
     <string name="progress_text_earning_mode">Anda %1$s%% lagi untuk mendapatkan 1 koin</string>
     <string name="ending_session">Mengakhiri Sesi?</string>
@@ -141,5 +141,8 @@
     <string name="start">Mulai</string>
     <string name="next_level">Tingkat berikutnya</string>
     <string name="offer_app_name">Dinding Penawaran</string>
+    <string name="splash_tag_line">MAIN \\n BERKEMBANG DAN KUMPULKAN HADIAH</string>
+    <string name="score">Skor</string>
+    <string name="away_n_from_1_n_coin">Jauh\n dari 1\n koin</string>
 
 </resources>

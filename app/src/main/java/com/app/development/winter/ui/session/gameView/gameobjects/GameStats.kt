@@ -15,6 +15,7 @@ data class GameStateNew(
     var totalScore: Int = 0,
     var totalHitObstacles: Int = 0,
     var playerColumnPosition: Int = 0,
+    val playerPaddingBottom: Int = PLAYER_BOTTOM_PADDING,
     var currentPlayerPosition: Position = Position(),
     var currentPlayerRotation: Float = 0f,
     var gameViewWidth: Int = 0,
@@ -47,18 +48,18 @@ data class GameStateNew(
 
     val playerLeft
         get() =
-            (currentPlayerPosition.x) + (columnWidth / 2) - (playerWidth / 2)
+            (playerColumnPosition * columnWidth) + (columnWidth / 2) - (playerWidth / 2)
 
     val playerTop
         get() =
-            (gameViewHeight - (playerHeight + TOP_FALLING_PADDING)).toFloat()
+            gameViewHeight - (playerHeight) - playerPaddingBottom // Ad
 
     val playerReact
         get() = RectF(
             /* left = */ playerLeft.toFloat(),
-            /* top = */ playerTop.toFloat(),
+            /* top = */ (playerTop.toFloat() - playerHeight),
             /* right = */ (playerLeft + playerWidth).toFloat(),
-            /* bottom = */ (playerTop + playerHeight).toFloat()
+            /* bottom = */ (playerTop).toFloat()
         )
 }
 
@@ -70,8 +71,11 @@ const val WIDTH_INCREASE_FACTOR = 0.5f
 const val HEIGHT_INCREASE_FACTOR = 0.5f
 
 
-const val PLAYER_BOTTOM_PADDING = 90
+const val PLAYER_BOTTOM_PADDING = 160
 
 
 val TOP_FALLING_PADDING = 90.toPx()
+
+val OBSTACLE_FACTOR = 0.8f
+var COLLECTIBLE_FACTOR = 0.6f
 

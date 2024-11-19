@@ -115,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
+                android:textColor="@color/colorGraphEnd"
                 android:textSize="@dimen/_8ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txtTitle"

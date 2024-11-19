@@ -43,6 +43,7 @@ class GameView(context: Context, attrs: AttributeSet?) : AbstractGameView(contex
             synchronized(myGameObjects) {
                 val copyOfObstacleList = myGameObjects.toMutableList()
                 copyOfObstacleList.forEachIndexed { _, objectsCopy ->
+                    objectsCopy.rotation()
                     objectsCopy.draw(
                         canvas = canvas, gameState = gameState
                     )

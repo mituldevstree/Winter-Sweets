@@ -233,6 +233,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                android:padding="@dimen/_4sdp"
                 android:background="@drawable/circle_bg"
                 app:layout_constraintEnd_toStartOf="@+id/btnSettings"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -240,7 +241,7 @@
                 app:layout_constraintStart_toEndOf="@+id/btnAdDebugger"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
                 app:srcCompat="@drawable/ic_download_feature"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnSettings"

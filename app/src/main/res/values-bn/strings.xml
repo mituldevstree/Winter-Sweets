@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">আপনি ব্যবহারকারীর পরিসংখ্যান দেখতে পারেন</string>
     <string name="total_earning">মোট উপার্জন</string>
     <string name="leaderboard_message">অতিবাহিত সময়ের উপর ভিত্তি করে আপনি এখানে শীর্ষ 20 ব্যবহারকারী দেখতে পারেন</string>
-    <string name="overlay_message">আপনার পোষা প্রাণী সুন্দরভাবে বাড়ছে! এবং এই পুরস্কারটি আপনাদের একসাথে যাত্রার আরেকটি উত্তেজনাপূর্ণ মুহূর্তের সূচনা করে!</string>
+    <string name="overlay_message">বড় হওয়া কঠিন, প্রিয়। নাহলে, সবাই এটা করত।</string>
     <string name="time">সময়</string>
     <string name="progress_text_earning_mode">১টি কয়েন অর্জনের জন্য আপনি %1$s%% দূরে আছেন</string>
     <string name="ending_session">সেশন শেষ হচ্ছে?</string>
@@ -141,5 +141,8 @@
     <string name="start">শুরু</string>
     <string name="next_level">পরবর্তী স্তর</string>
     <string name="offer_app_name">অফারওয়াল</string>
+    <string name="splash_tag_line">খেলুন \\n বিকশিত হন এবং পুরস্কার সংগ্রহ করুন</string>
+    <string name="score">স্কোর</string>
+    <string name="away_n_from_1_n_coin">১টি\n কয়েন থেকে\n দূরে</string>
 
 </resources>

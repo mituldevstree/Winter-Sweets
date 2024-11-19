@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">Vous pouvez voir les statistiques de l\'utilisateur</string>
     <string name="total_earning">Gain total</string>
     <string name="leaderboard_message">Vous pouvez voir ici les 20 meilleurs utilisateurs en fonction du temps passé</string>
-    <string name="overlay_message">Votre animal de compagnie grandit merveilleusement! Cette récompense marque un autre moment excitant dans votre aventure ensemble!</string>
+    <string name="overlay_message">Grandir est difficile, mon amour. Sinon, tout le monde le ferait.</string>
     <string name="time">Temps</string>
     <string name="progress_text_earning_mode">Vous êtes à %1$s%% d\'obtenir 1 pièce</string>
     <string name="ending_session">Fin de session?</string>
@@ -141,5 +141,8 @@
     <string name="start">Démarrer</string>
     <string name="next_level">Niveau suivant</string>
     <string name="offer_app_name">Mur d\'offres</string>
+    <string name="splash_tag_line">JOUER \\n ÉVOLUER ET COLLECTER DES RÉCOMPENSES</string>
+    <string name="score">Score</string>
+    <string name="away_n_from_1_n_coin">À\n 1 pièce\n près</string>
 
 </resources>

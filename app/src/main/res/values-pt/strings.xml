@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">Você pode ver as estatísticas do usuário</string>
     <string name="total_earning">Ganhos totais</string>
     <string name="leaderboard_message">Você pode ver aqui os 20 principais usuários com base no tempo gasto</string>
-    <string name="overlay_message">Seu animal de estimação está crescendo maravilhosamente! e esta recompensa marca outro momento emocionante em sua jornada juntos!</string>
+    <string name="overlay_message">Crescer é difícil, amor. Caso contrário, todos o fariam.</string>
     <string name="time">Tempo</string>
     <string name="progress_text_earning_mode">Você está a %1$s%% de ganhar 1 moeda</string>
     <string name="ending_session">Encerrar sessão?</string>
@@ -141,5 +141,8 @@
     <string name="start">Iniciar</string>
     <string name="next_level">Próximo nível</string>
     <string name="offer_app_name">Parede de Ofertas</string>
+    <string name="splash_tag_line">JOGUE \\n EVOLUA E COLETE RECOMPENSAS</string>
+    <string name="score">Pontuação</string>
+    <string name="away_n_from_1_n_coin">Longe\n de 1\n moeda</string>
 
 </resources>

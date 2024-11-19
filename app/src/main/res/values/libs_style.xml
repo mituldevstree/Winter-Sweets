@@ -151,7 +151,7 @@
 
         <item name="offerWallContentPaddingHorizontal">@dimen/_10sdp</item>
         <item name="offerWallContentPaddingTop">0dp</item>
-        <item name="offerWallContentPaddingBottom">@dimen/_55sdp</item>
+        <item name="offerWallContentPaddingBottom">@dimen/_85sdp</item>
         <item name="offerWallGeneralListHorizontalPadding">@dimen/_6sdp</item>
         <item name="offerWallGeneralListItemPadding">@dimen/_5sdp</item>
         <item name="offerWallVerticalListItemPadding">@dimen/_4sdp</item>
@@ -173,7 +173,7 @@
         <item name="offerWallColorTertiary">@color/colorTertiary</item>
         <item name="offerWallColorTextPrimary">@color/colorTextPrimary</item>
         <item name="offerWallColorTextPrimaryInverse">@color/colorTextPrimaryInverse</item>
-        <item name="offerWallColorTextSecondary">@color/colorTextSecondary</item>
+        <item name="offerWallColorTextSecondary">@color/colorTertiary</item>
         <item name="offerWallColorTextSecondaryInverse">@color/colorTextSecondaryInverse</item>
         <item name="offerWallColorTextHint">@color/colorTextHint</item>
         <item name="offerWallColorTextError">@color/colorRed</item>

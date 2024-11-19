@@ -129,6 +129,8 @@ class LandingActivity :
                 }
 
                 AdvanceBaseViewModel.LoadingState.ERROR -> {
+                    mBinding?.lottieHomeAnimation?.pauseAnimation()
+                    mBinding?.progressView?.hide()
                     if (LocalDataHelper.haveActiveSession) {
                         forceRestart()
                     } else {

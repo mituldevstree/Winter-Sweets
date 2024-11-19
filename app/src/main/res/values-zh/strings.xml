@@ -127,7 +127,7 @@
     <string name="show_user_statistics_message">您可以查看用户的统计信息</string>
     <string name="total_earning">总收入</string>
     <string name="leaderboard_message">您可以在此处查看根据花费时间排名前 20 位的用户</string>
-    <string name="overlay_message">您的宠物正在美丽地成长！这个奖励标志着你们一起旅程中的又一个激动人心的时刻！</string>
+    <string name="overlay_message">成长很难，亲爱的。否则，人人都会这样做。</string>
     <string name="time">时间</string>
     <string name="progress_text_earning_mode">您距离获得1枚硬币还差%1$s%%</string>
     <string name="ending_session">结束会话？</string>
@@ -141,5 +141,8 @@
     <string name="start">开始</string>
     <string name="next_level">下一个级别</string>
     <string name="offer_app_name">优惠墙</string>
+    <string name="splash_tag_line">玩 \\n 进化并收集奖励</string>
+    <string name="score">得分</string>
+    <string name="away_n_from_1_n_coin">距离1\n硬币还差\n</string>
 
 </resources>
