@@ -23,7 +23,7 @@ sealed class SessionEvent : ViewIntent {
     data class ResponseEndSession(val sessionData: SessionData?) : SessionEvent()
     data object RequestRewardForAd : SessionEvent()
     data class ResponseRewardForAd(val reward: CycleAdsEarnings?) : SessionEvent()
-    data object RequestUserStatistics : SessionEvent()
+    data class RequestUserStatistics(val focusTimeInSec: String?) : SessionEvent()
     data class ResponseUserStatistics(val userState: UserStatistics) : SessionEvent()
     data class ErrorSessionInfo(
         val loadingType: AdvanceBaseViewModel.LoadingType,

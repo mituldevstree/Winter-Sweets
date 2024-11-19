@@ -111,7 +111,7 @@ class SessionConfigViewModel : AdvanceBaseViewModel<SessionEvent, SessionUiState
         }
 
         is SessionEvent.RequestUserStatistics -> {
-            getUserStatistics()
+            getUserStatistics(event.focusTimeInSec)
             currentState.copy(
                 loadingState = Pair(
                     LoadingType.USER_STATE_DATA, LoadingState.PROCESSING
@@ -201,9 +201,10 @@ class SessionConfigViewModel : AdvanceBaseViewModel<SessionEvent, SessionUiState
     /**
      * Get user state for non earning mode.
      */
-    private fun getUserStatistics() {
+    private fun getUserStatistics(focusTimeInSec: String?) {
         val param: MutableMap<String, Any> = HashMap()
         param["userId"] = LocalDataHelper.getUserDetail()?.id ?: ""
+        param["focusedTimeInSec"] = focusTimeInSec ?: ""
         viewModelScope.launch {
             SessionRepository.getUserStatistics(param).catch { exception ->
                 exception.message?.let { message ->

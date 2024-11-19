@@ -36,17 +36,8 @@ class UserStatisticsOverlayService :
     }
 
     override fun initUI() {
-        getUpdatedData()
-
+        mViewModel.getSessionUiState().handleEvent(SessionEvent.RequestUserStatistics("0"))
         setFloatingTouchListener()
-    }
-
-    private fun getUpdatedData() {
-        mViewModel.getSessionUiState().handleEvent(SessionEvent.RequestUserStatistics)
-        lifecycleScope.launch {
-            delay(4000)
-            getUpdatedData()
-        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -156,6 +147,11 @@ class UserStatisticsOverlayService :
         when (action) {
             SessionActionListeners.SessionAction.SESSION_END -> {
                 endCycle()
+            }
+
+            SessionActionListeners.SessionAction.SYNC_TIME -> {
+                mViewModel.getSessionUiState()
+                    .handleEvent(SessionEvent.RequestUserStatistics(value.toString()))
             }
 
             else -> {
