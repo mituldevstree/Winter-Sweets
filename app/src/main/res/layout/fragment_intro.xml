@@ -76,6 +76,7 @@
             android:gravity="center_horizontal"
             android:text="@{data.subTitle}"
             android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/_18ssp"
             app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toTopOf="@+id/txtDescription"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
@@ -84,16 +85,17 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtDescription"
-            style="@style/FontPrimaryRegular.TextColor.Secondary"
+            style="@style/FontPrimaryRegular.TextColor.Primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:minLines="3"
             android:text="@{data.getTutorialDescription()}"
+            android:textSize="@dimen/_10ssp"
             app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:textAllCaps="true"
             tools:text="@string/demo_small" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -235,7 +235,7 @@ abstract class AdvancedBaseActivity<VDB : ViewDataBinding, INTENT : ViewIntent, 
     fun showProgressBar(lottieFile: Int = 0, message: String? = getString(R.string.loading)) {
         mLoadingViewBinding?.layoutAppLoaderView?.show()
         mLoadingViewBinding?.lottieAnimationView?.let {
-            LottieAnimationUtil.setHomePageAnimation(it, autoPlayLottie = true)
+            LottieAnimationUtil.setAppDefaultLoader(it, autoPlayLottie = true)
         }
         if (message.isNullOrEmpty().not()) {
             mLoadingViewBinding?.txtErrorMessage?.text = message

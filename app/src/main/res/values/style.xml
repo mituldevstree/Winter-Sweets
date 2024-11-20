@@ -147,8 +147,21 @@
         <item name="android:textSize">@dimen/_18ssp</item>
     </style>
 
+    <style name="Referral.Lib.List.SubTitle.App" parent="Referral.Lib.List.Description">
+        <item name="android:textColor">@color/colorGraphEnd</item>
+    </style>
+
+    <style name="Referral.Lib.Milestone.Level.Description" parent="Referral.Lib.List.Description">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Referral.Lib.Milestone.Level.Title" parent="Referral.Lib.List.Description">
+        <item name="android:textColor">@color/referralLibTextColorPrimary</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
     <style name="Referral.Lib.List.Description.App" parent="Referral.Lib.List.Description">
-        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
     <style name="Referral.Lib.Milestone.Level.Title.App" parent="FontSecondaryBold.TextColor.Secondary">

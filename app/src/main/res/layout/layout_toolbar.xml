@@ -81,6 +81,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
                 app:layout_goneMarginEnd="0dp"
@@ -110,8 +111,8 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/toolbar_user_bg"
-                android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:imageResource="@{LocalDataHelper.INSTANCE.userDetail.getUserAvtar()}"
+                android:onClick="@{(v)->clickListener.onClick(v)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_goneMarginStart="0dp"
@@ -166,13 +167,13 @@
                 android:paddingHorizontal="@dimen/_38sdp"
                 android:setValue="@{appTitle}"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="@dimen/_25ssp"
-                android:visibility="gone"
+                android:textSize="@dimen/_22ssp"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/app_name"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtSubTitle"
@@ -202,9 +203,11 @@
                 android:isVisible="@{showSwitch}"
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                tools:visibility="visible" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnAdDebugger"
@@ -229,19 +232,20 @@
                 android:layout_width="@dimen/topBarIconSize"
                 android:layout_height="@dimen/topBarIconSize"
                 android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/circle_bg"
                 android:isVisible="@{showDownloadFeature}"
                 android:onClick="@{(v)->clickListener.onClick(v)}"
+                android:padding="@dimen/_4sdp"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
-                android:padding="@dimen/_4sdp"
-                android:background="@drawable/circle_bg"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintEnd_toStartOf="@+id/btnSettings"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toEndOf="@+id/btnAdDebugger"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
                 app:srcCompat="@drawable/ic_download_feature"
-                tools:visibility="visible" />
+                tools:visibility="gone" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnSettings"
@@ -253,6 +257,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintEnd_toStartOf="@+id/btnNotification"
                 app:layout_constraintStart_toEndOf="@+id/btnDownloadFeature"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
@@ -268,6 +273,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintEnd_toStartOf="@+id/btnClose"
                 app:layout_constraintStart_toEndOf="@+id/btnSettings"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"
@@ -283,6 +289,7 @@
                 android:onClick="@{(v)->clickListener.onClick(v)}"
                 android:setImageSelector="@{true}"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btnNotification"
                 app:layout_constraintTop_toTopOf="@+id/txtTitle"

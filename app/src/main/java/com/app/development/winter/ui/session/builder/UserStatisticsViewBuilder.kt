@@ -7,6 +7,7 @@ import com.app.development.winter.databinding.LayoutUserStatisticsBinding
 import com.app.development.winter.shared.base.AdvanceBaseViewModel
 import com.app.development.winter.shared.extension.hapticFeedbackEnabled
 import com.app.development.winter.shared.extension.invisible
+import com.app.development.winter.shared.extension.show
 import com.app.development.winter.shared.model.UserStatistics
 import com.app.development.winter.ui.session.state.SessionUiState
 import kotlinx.coroutines.Job
@@ -87,7 +88,7 @@ open class UserStatisticsViewBuilder : View.OnClickListener {
                     )
                     syncTime = 0
                 }
-                //info.notifyChange()
+                info.notifyChange()
                 delay(1000)
                 manageTimer(mBinding?.statistics)
             }
@@ -100,9 +101,11 @@ open class UserStatisticsViewBuilder : View.OnClickListener {
 
     private fun showLoadingView(isShow: Boolean) {
         if (isShow) {
+            mBinding?.tvDataSyncing?.show()
             mBinding?.progressBar?.show()
         } else {
             mBinding?.progressBar?.invisible()
+            mBinding?.tvDataSyncing?.invisible()
         }
     }
 

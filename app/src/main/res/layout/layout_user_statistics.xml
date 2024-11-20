@@ -48,16 +48,6 @@
                 tools:visibility="visible" />
 
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/progressBar"
-                style="@style/ProgressBarHorizontal"
-                android:visibility="visible"
-                android:layout_marginTop="@dimen/_minus7sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:visibility="invisible" />
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivLogo"
                 style="@style/FontSecondaryBold.TextColor.Primary"
@@ -211,6 +201,7 @@
                 android:layout_height="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:src="@drawable/rounded_primary_gradient_bg"
+                app:layout_constraintBottom_toTopOf="@id/tvDataSyncing"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivLogo" />
@@ -220,9 +211,9 @@
                 style="@style/FontSecondaryBold.TextColor.Primary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:setValue="@{``+statistics.totalReferrals}"
                 android:gravity="center"
                 android:maxLines="1"
+                android:setValue="@{``+statistics.totalReferrals}"
                 android:textAppearance="@style/TextViewShadow"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toTopOf="@id/tvReferralLbl"
@@ -259,10 +250,10 @@
                 android:id="@+id/tvActiveUser"
                 style="@style/FontSecondaryBold.TextColor.Primary"
                 android:layout_width="0dp"
-                android:setValue="@{``+statistics.activeAppUsers}"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxLines="1"
+                android:setValue="@{``+statistics.activeAppUsers}"
                 android:textAppearance="@style/TextViewShadow"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toTopOf="@id/tvActiveUserLbl"
@@ -301,9 +292,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingHorizontal="@dimen/_10sdp"
                 android:maxLines="1"
-                android:setValue="@{``+statistics.credits}"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:setNumericAdverb="@{statistics.credits}"
                 android:textAppearance="@style/TextViewShadow"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toTopOf="@id/tvCoinsLbl"
@@ -342,6 +333,34 @@
                 app:layout_constraintEnd_toEndOf="@+id/ivEarning"
                 app:layout_constraintStart_toStartOf="@+id/ivTimer"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDataSyncing"
+                style="@style/FontPrimaryRegular.TextColor.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/data_syncing"
+                android:textAppearance="@style/TextViewShadow"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/progressBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                style="@style/ProgressBarHorizontal"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

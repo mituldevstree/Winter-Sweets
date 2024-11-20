@@ -5,7 +5,7 @@
         <item name="referralLibBackground">@drawable/window_background</item>
         <item name="referralLibHomePageBackground">@null</item>
         <item name="referralLibListBackground">@drawable/ic_referral_list_background</item>
-        <item name="referralLibGiveawayListBackground">@drawable/ic_giveaway_list_background</item>
+        <item name="referralLibGiveawayListBackground">@drawable/lib_giveaway_list_background</item>
         <item name="referralLibEditTextBackground">@drawable/edittext_bg</item>
 
         <item name="referralLibIconShare">@drawable/ic_share</item>
@@ -35,27 +35,27 @@
         <item name="referralLibTopBarIconSize">@dimen/topBarIconSize</item>
         <item name="referralLibDownIconSize">@dimen/_35sdp</item>
         <item name="referralLibShareCopyIconSize">@dimen/_52sdp</item>
-        <item name="referralLibSelectorType">DIMMED</item>
+        <item name="referralLibSelectorType">BOUNCE</item>
         <item name="referralLibIsUseDefaultSelector">false</item>
-        <item name="referralLibShimmerViewAlpha">0.15</item>
+        <item name="referralLibShimmerViewAlpha">0.5</item>
 
         <item name="referralLibContentPaddingTop">0dp</item>
-        <item name="referralLibContentPaddingBottom">@dimen/_60sdp</item>
+        <item name="referralLibContentPaddingBottom">@dimen/_70sdp</item>
         <item name="referralLibContentPaddingHorizontal">@dimen/_10sdp</item>
         <item name="referralLibGiveawayListHorizontalPadding">@dimen/_17sdp</item>
         <item name="referralLibGiveawayListVerticalPadding">@dimen/_5sdp</item>
 
         <item name="referralLibColorGivvyLogo">@color/colorTertiary</item>
-        <item name="referralLibColorTertiary">@color/colorTertiary</item>
         <item name="referralLibTextColorPrimary">@color/colorTextPrimary</item>
+        <item name="referralLibColorTertiary">@color/colorGraphEnd</item>
         <item name="referralLibTextColorPrimaryInverse">@color/colorTextPrimaryInverse</item>
         <item name="referralLibTextColorSecondary">@color/colorTextPrimary</item>
         <item name="referralLibTextColorSecondaryInverse">@color/colorTextSecondaryInverse</item>
         <item name="referralLibTextColorHint">@color/colorTextHint</item>
         <item name="referralLibColorShimmer">@color/referralLibColorShimmer</item>
 
-        <item name="referralLibProgressBarColorNormal">@color/colorPrimaryDarker</item>
-        <item name="referralLibProgressBarColorSelected">@color/colorTertiary</item>
+        <item name="referralLibProgressBarColorNormal">#E3E7ED</item>
+        <item name="referralLibProgressBarColorSelected">#89A9CB</item>
 
         <item name="referralLibPrimaryButtonStyle">@style/Widget.Button.Primary</item>
         <item name="referralLibSecondaryButtonStyle">@style/Widget.Button.Secondary</item>
@@ -63,9 +63,13 @@
         <item name="referralLibTextViewHeaderStyle">@style/Referral.Lib.TextView.Header.App</item>
         <item name="referralLibTextViewTitleStyle">@style/Referral.Lib.TextView.Title.App</item>
         <item name="referralLibListTitleStyle">@style/Referral.Lib.List.Title.App</item>
+        <item name="referralLibListSubTitleStyle">@style/Referral.Lib.List.SubTitle.App</item>
         <item name="referralLibListDescriptionStyle">@style/Referral.Lib.List.Description.App</item>
+        <item name="referralLibMilestoneLevelDescriptionStyle">
+            @style/Referral.Lib.Milestone.Level.Description
+        </item>
         <item name="referralLibMilestoneLevelTitleStyle">
-            @style/Referral.Lib.Milestone.Level.Title.App
+            @style/Referral.Lib.Milestone.Level.Title
         </item>
     </style>
 
@@ -86,7 +90,7 @@
         <item name="walletLibIconFaceTecPage">@drawable/lib_icon_facetec_page</item>
         <item name="walletLibIconHomeInstagram">@drawable/lib_icon_home_instagram</item>
         <item name="walletLibIconHomeSupport">@drawable/lib_icon_home_support</item>
-        <item name="walletLibPaymentProofBackground">@drawable/ic_giveaway_list_background</item>
+        <item name="walletLibPaymentProofBackground">@drawable/lib_payment_proof_background</item>
         <item name="walletLibEarningViewBackground">@drawable/lib_earning_background</item>
         <item name="walletLibSquareListBackground">@drawable/lib_square_list_background</item>
         <item name="walletLibSquareListBackgroundSelected">
@@ -95,7 +99,7 @@
         <item name="walletLibListBackground">@drawable/edittext_bg</item>
         <item name="walletLibListBackgroundExpanded">@drawable/edittext_bg</item>
 
-        <item name="walletLibShimmerViewAlpha">0.15</item>
+        <item name="walletLibShimmerViewAlpha">0.50</item>
         <item name="walletLibDialogAlpha">0.65</item>
         <item name="walletLibTopBarIconSize">@dimen/topBarIconSize</item>
         <item name="walletLibSupportIconSize">@dimen/_45sdp</item>
@@ -164,7 +168,7 @@
         <item name="offerWallIconBack">@drawable/ic_back</item>
         <item name="offerWallIconCoin">@drawable/lib_icon_coin</item>
 
-        <item name="offerWallShimmerViewAlpha">0.10</item>
+        <item name="offerWallShimmerViewAlpha">0.50</item>
         <item name="offerWallDialogAlpha">0.6</item>
         <item name="offerWallTopBarIconSize">@dimen/topBarIconSize</item>
         <item name="offerWallSelectorType">DIMMED</item>

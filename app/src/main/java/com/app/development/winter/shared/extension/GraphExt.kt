@@ -128,7 +128,7 @@ fun BarChart.addCommonPropertyOfBarGraph(axisTextSize: Float) {
 fun setYAxisProperties(context: Context, axis: YAxis) {
     axis.gridColor = ContextCompat.getColor(context, R.color.colorWhiteAlpha15)
     axis.axisLineColor = ContextCompat.getColor(context, R.color.colorWhiteAlpha15)
-    axis.textColor = ContextCompat.getColor(context, R.color.colorWhiteAlpha75)
+    axis.textColor = ContextCompat.getColor(context, R.color.colorWhite)
     axis.typeface = ResourcesCompat.getFont(context, R.font.montserrat_semi_bold)
     axis.textSize = 8f
     axis.axisMinimum = 0f
@@ -149,7 +149,7 @@ fun BarChart.setXAxisProperties(axisTextSize: Float) {
     xAxis.yOffset = 10f
     xAxis.textSize = axisTextSize
     xAxis.gridColor = ContextCompat.getColor(this.context, android.R.color.transparent)
-    xAxis.textColor = ContextCompat.getColor(this.context, R.color.colorWhiteAlpha75)
+    xAxis.textColor = ContextCompat.getColor(this.context, R.color.colorWhite)
     xAxis.typeface = ResourcesCompat.getFont(context, R.font.montserrat_semi_bold)
 }
 

@@ -100,7 +100,7 @@ android {
             val variant = this
             variant.outputs.map { it as BaseVariantOutputImpl }.forEach { output ->
                 val outputFileName =
-                    "Zombie-${variant.name}-v${variant.versionName}-.apk"
+                    "WinterSweet-${variant.name}-v${variant.versionName}-.apk"
                 output.outputFileName = outputFileName
             }
         }

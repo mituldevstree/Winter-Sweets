@@ -45,7 +45,7 @@ class LandingActivity :
     }
 
     override fun initUI() {
-        WindowCompat.setDecorFitsSystemWindows(window,false)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         LocalDataHelper.clearUserPreference()
         InstallAppCheckManager.getAllInstalledPackage { isPackageInstalled ->
             isAutoClickerInstalled = isPackageInstalled
@@ -100,6 +100,9 @@ class LandingActivity :
                                         },
                                         onReferralLinkEstablished = { value, isSuccess ->
                                             LocalDataHelper.setFirstLogin(true)
+                                            if (isSuccess == true) {
+                                                onUserInfoUpdate()
+                                            }
                                             mViewModel?.getUserUiState()
                                                 ?.handleEvent(UserEvents.RequestAppConfig)
                                         },

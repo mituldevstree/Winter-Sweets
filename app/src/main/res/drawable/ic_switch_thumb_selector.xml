@@ -10,7 +10,7 @@
     </item>
     <item android:state_checked="false">
         <shape android:dither="true" android:shape="rectangle" android:useLevel="false" android:visible="true">
-            <gradient android:endColor="@color/colorWhite" android:startColor="@color/colorWhite" />
+            <gradient android:endColor="#3B324E" android:startColor="#3B324E" />
             <corners android:radius="@dimen/_18sdp" />
             <size android:width="@dimen/_18sdp" android:height="@dimen/_18sdp" />
             <stroke android:width="5dp" android:color="@android:color/transparent" />

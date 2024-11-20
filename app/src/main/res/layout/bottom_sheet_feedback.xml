@@ -98,7 +98,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txtMessage"
-                    style="@style/FontPrimaryRegular.TextColor.Secondary"
+                    style="@style/FontPrimaryRegular.TextColor.Primary"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_15sdp"

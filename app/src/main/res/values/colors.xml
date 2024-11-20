@@ -9,10 +9,10 @@
     <color name="colorSecondary">#3b324d</color>
     <color name="colorSecondaryVariant">#7b729f</color>
 
-    <color name="colorGraphStart">#FFFFFF</color>
+    <color name="colorGraphStart">#2677AA</color>
     <color name="colorGraphEnd">#4FFFFF</color>
-    <color name="colorGraphStrokeStart">#FFFFFF</color>
-    <color name="colorGraphStrokeEnd">#4FFFFF</color>
+    <color name="colorGraphStrokeStart">#4FFFFF</color>
+    <color name="colorGraphStrokeEnd">#2677AA</color>
 
     <color name="colorBlack">#FF000000</color>
     <color name="colorBlackAlpha50">#80000000</color>
@@ -34,6 +34,7 @@
     <color name="colorTextHint">#B3FFFFFF</color>
     <color name="colorTextShadow">#606163</color>
     <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="referralLibTextColorPrimary">#89A9CB</color>
     <color name="colorTextPrimaryInverse">#FFB5B8</color>
     <color name="colorTextSecondary">#09324B</color>
     <color name="colorTextSecondaryInverse">#FFFFFF</color>
