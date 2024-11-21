@@ -131,9 +131,9 @@
     <string name="time">时间</string>
     <string name="progress_text_earning_mode">您距离获得1枚硬币还差%1$s%%</string>
     <string name="ending_session">结束会话？</string>
-    <string name="session_end_message">你像一个真正的幸存者一样在混乱中航行。出发之前，领取奖励并为下一次冒险做好准备。我们很快就会等你——保持敏锐！</string>
+    <string name="session_end_message">不要错过——快回来看看有什么新东西，并保持势头！</string>
     <string name="session_ended_title">野性成长，惊人的力量。</string>
-    <string name="session_ended_message">恭喜你，幸存者！你已经成功了。您的努力得到了回报——领取奖励并为下一个挑战做好准备。</string>
+    <string name="session_ended_message">你的努力得到了回报——这是你的奖励！继续前进以解锁更大的奖励。冒险才刚刚开始！</string>
     <string name="choose_a_pet">选择一个宠物</string>
     <string name="loading_your_wild_companions_message">正在加载您的野生伙伴……准备好探索、照顾并与您新的异域朋友建立联系！</string>
     <string name="loading_your_wild_companions">正在加载您的野生伙伴</string>

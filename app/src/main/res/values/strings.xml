@@ -134,9 +134,9 @@
     <string name="time">Time</string>
     <string name="progress_text_earning_mode">You are %1$s%% away from gaining 1 coin</string>
     <string name="ending_session">Ending Session?</string>
-    <string name="session_end_message">You\'ve navigated the chaos like a true survivor. Before you go, grab your rewards and prepare for the next adventure. We’ll be waiting for you soon—stay sharp!</string>
+    <string name="session_end_message">Don’t miss out—come back soon to see what’s new and keep the momentum going!</string>
     <string name="session_ended_title">Wild growth, amazing strength.</string>
-    <string name="session_ended_message">Congratulations, Survivor! You\'ve made it through. Your efforts have paid off—claim your rewards and gear up for the next challenge.</string>
+    <string name="session_ended_message">Your efforts paid off—here’s your reward!  Keep going to unlock even bigger rewards. The adventure’s just getting started!</string>
     <string name="choose_a_pet">choose a pet</string>
     <string name="loading_your_wild_companions_message">Loading your wild companions… Get ready to explore, care for, and bond with your new exotic friends!</string>
     <string name="loading_your_wild_companions">Loading your wild companions</string>

@@ -131,9 +131,9 @@
     <string name="time">समय</string>
     <string name="progress_text_earning_mode">आप 1 सिक्का प्राप्त करने से %1$s%% दूर हैं</string>
     <string name="ending_session">सत्र समाप्त हो रहा है?</string>
-    <string name="session_end_message">आपने एक सच्चे उत्तरजीवी की तरह अराजकता का सामना किया है। जाने से पहले, अपने पुरस्कार ले लें और अगले साहसिक कार्य के लिए तैयारी करें। हम जल्द ही आपका इंतजार करेंगे—सचेत रहें!</string>
+    <string name="session_end_message">छूट न जाए—जल्द वापस आएं और देखें कि क्या नया है और गति बनाए रखें!</string>
     <string name="session_ended_title">जंगली वृद्धि, अद्भुत शक्ति।</string>
-    <string name="session_ended_message">बधाई हो, उत्तरजीवी! आपने इसे पूरा कर लिया है. आपके प्रयास सफल हो गए हैं—अपने पुरस्कारों का दावा करें और अगली चुनौती के लिए तैयार रहें।</string>
+    <string name="session_ended_message">आपके प्रयास सफल हुए—यहाँ आपका इनाम है! और भी बड़े इनाम पाने के लिए आगे बढ़ते रहें। साहसिक यात्रा अभी शुरू ही हुई है!</string>
     <string name="choose_a_pet">एक पालतू चुनें</string>
     <string name="loading_your_wild_companions_message">आपके जंगली साथी लोड हो रहे हैं… अपने नए विदेशी दोस्तों के साथ अन्वेषण, देखभाल और बंधन के लिए तैयार हो जाइए!</string>
     <string name="loading_your_wild_companions">आपके जंगली साथी लोड हो रहे हैं</string>

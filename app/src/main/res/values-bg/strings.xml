@@ -131,9 +131,9 @@
     <string name="time">Време</string>
     <string name="progress_text_earning_mode">Остават %1$s%% до спечелването на 1 монета</string>
     <string name="ending_session">Приключване на сесията?</string>
-    <string name="session_end_message">Навигирал си в хаоса като истински оцелял. Преди да тръгнете, вземете наградите си и се подгответе за следващото приключение. Ще ви очакваме скоро - бъдете внимателни!</string>
+    <string name="session_end_message">Не пропускайте—върнете се скоро, за да видите какво ново има и да поддържате инерцията!</string>
     <string name="session_ended_title">Див растеж, невероятна сила.</string>
-    <string name="session_ended_message">Поздравления, Survivor! Успяхте да преминете. Усилията ви се отплатиха – вземете наградите си и се подгответе за следващото предизвикателство.</string>
+    <string name="session_ended_message">Вашите усилия се отплатиха—ето вашата награда! Продължавайте, за да отключите още по-големи награди. Приключението тепърва започва!</string>
     <string name="choose_a_pet">Изберете домашен любимец</string>
     <string name="loading_your_wild_companions_message">Зареждат се вашите диви спътници… Подгответе се да изследвате, да се грижите и да се свържете с новите си екзотични приятели!</string>
     <string name="loading_your_wild_companions">Зареждат се вашите диви спътници</string>

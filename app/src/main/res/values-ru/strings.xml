@@ -131,9 +131,9 @@
     <string name="time">Время</string>
     <string name="progress_text_earning_mode">Вам осталось %1$s%% до получения 1 монеты</string>
     <string name="ending_session">Завершить сессию?</string>
-    <string name="session_end_message">Вы преодолели хаос, как настоящий выживший. Прежде чем уйти, заберите награды и приготовьтесь к следующему приключению. Мы скоро будем ждать вас — будьте начеку!</string>
+    <string name="session_end_message">Не пропустите—возвращайтесь скоро, чтобы узнать, что нового, и продолжайте в том же духе!</string>
     <string name="session_ended_title">Дикий рост, невероятная сила.</string>
-    <string name="session_ended_message">Поздравляю, Выживший! Вы справились. Ваши усилия окупились — получите награды и приготовьтесь к следующему испытанию.</string>
+    <string name="session_ended_message">Ваши усилия окупились—вот ваша награда! Продолжайте в том же духе, чтобы разблокировать еще большие награды. Приключение только начинается!</string>
     <string name="choose_a_pet">Выберите питомца</string>
     <string name="loading_your_wild_companions_message">Загружаются ваши дикие спутники… Приготовьтесь исследовать, заботиться и установить связь с новыми экзотическими друзьями!</string>
     <string name="loading_your_wild_companions">Загружаются ваши дикие спутники</string>

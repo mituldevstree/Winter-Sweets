@@ -131,9 +131,9 @@
     <string name="time">Tiempo</string>
     <string name="progress_text_earning_mode">Estás a %1$s%% de ganar 1 moneda</string>
     <string name="ending_session">¿Terminar sesión?</string>
-    <string name="session_end_message">Has navegado por el caos como un verdadero superviviente. Antes de partir, recoge tus recompensas y prepárate para la próxima aventura. Te estaremos esperando pronto. ¡Mantente alerta!</string>
+    <string name="session_end_message">¡No te lo pierdas—vuelve pronto para ver las novedades y mantener el impulso!</string>
     <string name="session_ended_title">Crecimiento salvaje, fuerza increíble.</string>
-    <string name="session_ended_message">¡Felicitaciones, superviviente! Lo has logrado. Tus esfuerzos han dado sus frutos: reclama tus recompensas y prepárate para el próximo desafío.</string>
+    <string name="session_ended_message">¡Tus esfuerzos dieron sus frutos—aquí está tu recompensa! Sigue adelante para desbloquear recompensas aún mayores. ¡La aventura acaba de comenzar!</string>
     <string name="choose_a_pet">Elige una mascota</string>
     <string name="loading_your_wild_companions_message">Cargando tus compañeros salvajes… ¡Prepárate para explorar, cuidar y conectarte con tus nuevos amigos exóticos!</string>
     <string name="loading_your_wild_companions">Cargando tus compañeros salvajes</string>
