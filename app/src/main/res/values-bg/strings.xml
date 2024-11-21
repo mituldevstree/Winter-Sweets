@@ -141,8 +141,12 @@
     <string name="start">Старт</string>
     <string name="next_level">Следващо ниво</string>
     <string name="offer_app_name">Оферта стена</string>
-    <string name="splash_tag_line">ИГРАЙ \\n ЕВОЛЮИРАЙ И СЪБИРАЙ НАГРАДИ</string>
+    <string name="splash_tag_line">ИГРАЙ \n ЕВОЛЮИРАЙ И СЪБИРАЙ НАГРАДИ</string>
     <string name="score">Резултат</string>
     <string name="away_n_from_1_n_coin">На\n отстояние от 1\n монета</string>
-
+    <string name="earn_more">Спечелете повече</string>
+    <string name="referrals">Препоръки</string>
+    <string name="credits">Кредити</string>
+    <string name="active_users">Активни потребители</string>
+    <string name="data_syncing">Синхронизиране на данни....</string>
 </resources>

@@ -144,5 +144,9 @@
     <string name="splash_tag_line">JOGUE \n EVOLUA E COLETE RECOMPENSAS</string>
     <string name="score">Pontuação</string>
     <string name="away_n_from_1_n_coin">Longe\n de 1\n moeda</string>
-
+    <string name="earn_more">Ganhe mais</string>
+    <string name="referrals">Referências</string>
+    <string name="credits">Créditos</string>
+    <string name="active_users">Usuários ativos</string>
+    <string name="data_syncing">Sincronizando dados....</string>
 </resources>

@@ -141,8 +141,12 @@
     <string name="start">শুরু</string>
     <string name="next_level">পরবর্তী স্তর</string>
     <string name="offer_app_name">অফারওয়াল</string>
-    <string name="splash_tag_line">খেলুন \\n বিকশিত হন এবং পুরস্কার সংগ্রহ করুন</string>
+    <string name="splash_tag_line">খেলুন \n বিকশিত হন এবং পুরস্কার সংগ্রহ করুন</string>
     <string name="score">স্কোর</string>
     <string name="away_n_from_1_n_coin">১টি\n কয়েন থেকে\n দূরে</string>
-
+    <string name="earn_more">আরও উপার্জন করুন</string>
+    <string name="referrals">রেফারেলস</string>
+    <string name="credits">ক্রেডিটস</string>
+    <string name="active_users">সক্রিয় ব্যবহারকারীরা</string>
+    <string name="data_syncing">ডেটা সিঙ্ক করা হচ্ছে....</string>
 </resources>

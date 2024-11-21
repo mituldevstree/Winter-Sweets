@@ -141,8 +141,12 @@
     <string name="start">Démarrer</string>
     <string name="next_level">Niveau suivant</string>
     <string name="offer_app_name">Mur d\'offres</string>
-    <string name="splash_tag_line">JOUER \\n ÉVOLUER ET COLLECTER DES RÉCOMPENSES</string>
+    <string name="splash_tag_line">JOUER \n ÉVOLUER ET COLLECTER DES RÉCOMPENSES</string>
     <string name="score">Score</string>
     <string name="away_n_from_1_n_coin">À\n 1 pièce\n près</string>
-
+    <string name="earn_more">Gagnez plus</string>
+    <string name="referrals">Références</string>
+    <string name="credits">Crédits</string>
+    <string name="active_users">Utilisateurs actifs</string>
+    <string name="data_syncing">Synchronisation des données....</string>
 </resources>

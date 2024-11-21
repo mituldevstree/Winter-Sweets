@@ -141,8 +141,13 @@
     <string name="start">开始</string>
     <string name="next_level">下一个级别</string>
     <string name="offer_app_name">优惠墙</string>
-    <string name="splash_tag_line">玩 \\n 进化并收集奖励</string>
+    <string name="splash_tag_line">玩 \n 进化并收集奖励</string>
     <string name="score">得分</string>
     <string name="away_n_from_1_n_coin">距离1\n硬币还差\n</string>
+    <string name="earn_more">赚更多</string>
+    <string name="referrals">推荐</string>
+    <string name="credits">积分</string>
+    <string name="active_users">活跃用户</string>
+    <string name="data_syncing">数据同步中....</string>
 
 </resources>

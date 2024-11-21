@@ -144,5 +144,10 @@
     <string name="splash_tag_line">SPIELE \n ENTWICKLE DICH UND SAMMLE BELohnungen</string>
     <string name="score">Punktzahl</string>
     <string name="away_n_from_1_n_coin">Noch\n 1 Münze\n entfernt</string>
+    <string name="earn_more">Mehr verdienen</string>
+    <string name="referrals">Empfehlungen</string>
+    <string name="credits">Guthaben</string>
+    <string name="active_users">Aktive Benutzer</string>
+    <string name="data_syncing">Daten synchronisieren....</string>
 
 </resources>

@@ -144,10 +144,10 @@
     <string name="start">Start</string>
     <string name="next_level">Next level</string>
     <string name="offer_app_name">Offerwall</string>
-    <string name="earn_more">Earn More</string>
     <string name="splash_tag_line">PLAY \n EVOLVE AND COLLECT REWARDS</string>
     <string name="score">Score</string>
     <string name="away_n_from_1_n_coin">Away \nfrom 1 coin</string>
+    <string name="earn_more">Earn More</string>
     <string name="referrals">Referrals</string>
     <string name="credits">Credits</string>
     <string name="active_users">Active Users</string>

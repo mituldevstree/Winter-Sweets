@@ -141,8 +141,12 @@
     <string name="start">Mulai</string>
     <string name="next_level">Tingkat berikutnya</string>
     <string name="offer_app_name">Dinding Penawaran</string>
-    <string name="splash_tag_line">MAIN \\n BERKEMBANG DAN KUMPULKAN HADIAH</string>
+    <string name="splash_tag_line">MAIN \n BERKEMBANG DAN KUMPULKAN HADIAH</string>
     <string name="score">Skor</string>
     <string name="away_n_from_1_n_coin">Jauh\n dari 1\n koin</string>
-
+    <string name="earn_more">Dapatkan lebih banyak</string>
+    <string name="referrals">Referensi</string>
+    <string name="credits">Kredit</string>
+    <string name="active_users">Pengguna Aktif</string>
+    <string name="data_syncing">Sinkronisasi data....</string>
 </resources>
