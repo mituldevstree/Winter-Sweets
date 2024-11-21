@@ -132,8 +132,8 @@
     <string name="progress_text_earning_mode">Anda %1$s%% lagi untuk mendapatkan 1 koin</string>
     <string name="ending_session">Mengakhiri Sesi?</string>
     <string name="session_end_message">Jangan lewatkan—segera kembali untuk melihat apa yang baru dan terus pertahankan momentumnya!</string>
-    <string name="session_ended_title">Pertumbuhan liar, kekuatan luar biasa.</string>
-    <string name="session_ended_message">Usahamu membuahkan hasil—ini hadiahmu! Teruskan untuk membuka hadiah yang lebih besar. Petualangan baru saja dimulai!</string>
+    <string name="session_ended_title">Selamat! Kamu berhasil!</string>
+    <string name="session_ended_message">Usahamu membuahkan hasil, ini hadiahmu! Teruskan untuk membuka hadiah yang lebih besar. Petualangan baru saja dimulai!</string>
     <string name="choose_a_pet">Pilih hewan peliharaan</string>
     <string name="loading_your_wild_companions_message">Memuat teman liar Anda… Bersiaplah untuk menjelajah, merawat, dan mengikat dengan teman eksotis baru Anda!</string>
     <string name="loading_your_wild_companions">Memuat teman liar Anda</string>

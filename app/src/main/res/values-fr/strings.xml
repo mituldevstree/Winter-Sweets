@@ -132,8 +132,8 @@
     <string name="progress_text_earning_mode">Vous êtes à %1$s%% d\'obtenir 1 pièce</string>
     <string name="ending_session">Fin de session?</string>
     <string name="session_end_message">Ne manquez pas—revenez bientôt pour voir les nouveautés et garder l\'élan!</string>
-    <string name="session_ended_title">Croissance sauvage, force incroyable.</string>
-    <string name="session_ended_message">Vos efforts ont payé—voici votre récompense ! Continuez pour débloquer des récompenses encore plus grandes. L\'aventure ne fait que commencer!</string>
+    <string name="session_ended_title">Félicitations ! Vous l\'avez fait!</string>
+    <string name="session_ended_message">Vos efforts ont payé, voici votre récompense ! Continuez pour débloquer des récompenses encore plus grandes. L\'aventure ne fait que commencer!</string>
     <string name="choose_a_pet">Choisir un animal</string>
     <string name="loading_your_wild_companions_message">Chargement de vos compagnons sauvages… Préparez-vous à explorer, prendre soin et tisser des liens avec vos nouveaux amis exotiques !</string>
     <string name="loading_your_wild_companions">Chargement de vos compagnons sauvages</string>

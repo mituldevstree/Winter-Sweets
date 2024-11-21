@@ -132,8 +132,8 @@
     <string name="progress_text_earning_mode">आप 1 सिक्का प्राप्त करने से %1$s%% दूर हैं</string>
     <string name="ending_session">सत्र समाप्त हो रहा है?</string>
     <string name="session_end_message">छूट न जाए—जल्द वापस आएं और देखें कि क्या नया है और गति बनाए रखें!</string>
-    <string name="session_ended_title">जंगली वृद्धि, अद्भुत शक्ति।</string>
-    <string name="session_ended_message">आपके प्रयास सफल हुए—यहाँ आपका इनाम है! और भी बड़े इनाम पाने के लिए आगे बढ़ते रहें। साहसिक यात्रा अभी शुरू ही हुई है!</string>
+    <string name="session_ended_title">बधाई हो! आपने कर दिखाया!</string>
+    <string name="session_ended_message">आपके प्रयास सफल हुए, यहाँ आपका इनाम है! और भी बड़े इनाम पाने के लिए आगे बढ़ते रहें। साहसिक यात्रा अभी शुरू ही हुई है!</string>
     <string name="choose_a_pet">एक पालतू चुनें</string>
     <string name="loading_your_wild_companions_message">आपके जंगली साथी लोड हो रहे हैं… अपने नए विदेशी दोस्तों के साथ अन्वेषण, देखभाल और बंधन के लिए तैयार हो जाइए!</string>
     <string name="loading_your_wild_companions">आपके जंगली साथी लोड हो रहे हैं</string>

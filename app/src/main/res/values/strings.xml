@@ -135,8 +135,8 @@
     <string name="progress_text_earning_mode">You are %1$s%% away from gaining 1 coin</string>
     <string name="ending_session">Ending Session?</string>
     <string name="session_end_message">Don’t miss out—come back soon to see what’s new and keep the momentum going!</string>
-    <string name="session_ended_title">Wild growth, amazing strength.</string>
-    <string name="session_ended_message">Your efforts paid off—here’s your reward!  Keep going to unlock even bigger rewards. The adventure’s just getting started!</string>
+    <string name="session_ended_title">Congratulations! You did it!</string>
+    <string name="session_ended_message">Your efforts paid off, \nHere’s your reward!  Keep going to unlock even bigger rewards. The adventure’s just getting started!</string>
     <string name="choose_a_pet">choose a pet</string>
     <string name="loading_your_wild_companions_message">Loading your wild companions… Get ready to explore, care for, and bond with your new exotic friends!</string>
     <string name="loading_your_wild_companions">Loading your wild companions</string>

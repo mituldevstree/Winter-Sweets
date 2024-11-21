@@ -132,8 +132,8 @@
     <string name="progress_text_earning_mode">Du bist %1$s%% davon entfernt, 1 Münze zu verdienen</string>
     <string name="ending_session">Sitzung beenden?</string>
     <string name="session_end_message">Verpassen Sie nichts—kommen Sie bald zurück, um zu sehen, was es Neues gibt, und halten Sie das Tempo aufrecht!</string>
-    <string name="session_ended_title">Wildes Wachstum, unglaubliche Stärke.</string>
-    <string name="session_ended_message">Ihre Bemühungen haben sich ausgezahlt—hier ist Ihre Belohnung! Machen Sie weiter, um noch größere Belohnungen freizuschalten. Das Abenteuer hat gerade erst begonnen!</string>
+    <string name="session_ended_title">Herzlichen Glückwunsch! Du hast es geschafft!</string>
+    <string name="session_ended_message">Ihre Bemühungen haben sich ausgezahlt, hier ist Ihre Belohnung! Machen Sie weiter, um noch größere Belohnungen freizuschalten. Das Abenteuer hat gerade erst begonnen!</string>
     <string name="choose_a_pet">Wähle ein Haustier</string>
     <string name="loading_your_wild_companions_message">Lade deine wilden Begleiter… Mach dich bereit, sie zu erkunden, zu pflegen und eine Bindung mit deinen exotischen Freunden aufzubauen!</string>
     <string name="loading_your_wild_companions">Lade deine wilden Begleiter</string>

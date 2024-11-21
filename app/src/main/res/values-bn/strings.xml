@@ -132,8 +132,8 @@
     <string name="progress_text_earning_mode">১টি কয়েন অর্জনের জন্য আপনি %1$s%% দূরে আছেন</string>
     <string name="ending_session">সেশন শেষ হচ্ছে?</string>
     <string name="session_end_message">মিস করবেন না—শীঘ্রই ফিরে আসুন নতুন কি আছে দেখতে এবং গতিকে বজায় রাখতে!</string>
-    <string name="session_ended_title">বন্য বৃদ্ধি, আশ্চর্যজনক শক্তি।</string>
-    <string name="session_ended_message">আপনার প্রচেষ্টা সফল হয়েছে—এখানে আপনার পুরস্কার! আরও বড় পুরস্কার আনলক করতে চালি</string>
+    <string name="session_ended_title">অভিনন্দন! আপনি এটি করেছেন!</string>
+    <string name="session_ended_message">আপনার প্রচেষ্টা সফল হয়েছে, এখানে আপনার পুরস্কার! আরও বড় পুরস্কার আনলক করতে চালিয়ে যান। অ্যাডভেঞ্চার শুধু শুরু হচ্ছে!</string>
     <string name="choose_a_pet">একটি পোষা প্রাণী নির্বাচন করুন</string>
     <string name="loading_your_wild_companions_message">আপনার বন্য সঙ্গীদের লোড হচ্ছে… আপনার নতুন বিদেশী বন্ধুদের সাথে অনুসন্ধান, যত্ন এবং বন্ধনের জন্য প্রস্তুত হন!</string>
     <string name="loading_your_wild_companions">আপনার বন্য সঙ্গীদের লোড হচ্ছে</string>
