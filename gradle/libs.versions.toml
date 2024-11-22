@@ -30,7 +30,7 @@ fb-version = "14.1.1"
 
 monetization-version = "3.6.91-beta04"
 withdraw-version = "3.0.7"
-offerwall-version = "v2.0.0-rc15"
+offerwall-version = "v2.0.3"
 invite-friend-version = "v2.0.3"
 
 lifecycle-livedata-ktx = "2.8.6"
